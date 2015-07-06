@@ -1,6 +1,4 @@
 # ArbotixPro_Port
 Porting arbotixpro to stm32f4 discovery board
-helloworld
 
-
-HAHAHA
+Using this this to keep track of it all
