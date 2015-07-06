@@ -70,8 +70,8 @@ int main(void)
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
    GPIO_Set_output(GPIOG,GPIO_Pin_13,GPIO_Mode_OUT);
     /*Uart Init*/
-  //PA9-UART1_TX
-  //PA10-UART1_RX
+  //PA9-UART1_TXa
+  //PA10-UART1_RX aa
   
 ConfigureUsart(9600);
   
