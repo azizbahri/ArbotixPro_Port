@@ -87,7 +87,7 @@ ConfigureUsart(9600);
     //GPIO_ToggleBits(GPIOB,GPIO_Pin_2);
     //GPIOG->ODR ^= GPIO_Pin_14;
     //LCD_DrawCircle((uint16_t)202,(uint16_t)64,(uint16_t)20);
-SendData(USART1, "Aziz");
+    SendData(USART1, "Aziz");
   }
 }
 
