@@ -14,9 +14,8 @@
 *******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx_conf.h"
+#include "stm32f4xx_conf.h"//Replaced stm32f10x_lib.h, 
 //<<--DELETE #include "stm32f10x_type.h" //"stm32f10x_type.h" has been replaced by stm32f4xx.h
-#include "stm32f10x_lib.h"
 #include "system_init.h"
 #include "serial.h"
 #include "CM_DXL_COM.h"

@@ -1,4 +1,10 @@
-
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 #include "common_type.h"
 #include "dynamixel.h"
 #include "stm32f10x_lib.h"
