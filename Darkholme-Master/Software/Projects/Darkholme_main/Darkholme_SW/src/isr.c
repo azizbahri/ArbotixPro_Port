@@ -5,10 +5,16 @@
 * Date               : 08/23/2010
 * Description        : functions about Interrupt service routine
 *******************************************************************************/
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
-#include "stm32f10x_type.h"
+
 #include "common_type.h"
 #include "usart.h"
 #include "isr.h"
