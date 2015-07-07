@@ -82,6 +82,21 @@
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c</file>
       <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\Obj\stm32f4xx_adc.o</file>
       <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\Obj\stm32f4xx_adc.pbi</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\common_type.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\stm32f10x_it.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\sound.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\adc.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\gyro_acc.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\zgb_hal.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\CM_DXL_COM.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\zigbee.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\system_init.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\serial.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\usart.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\led.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\system_func.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\inc\button.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\dynamixel.h</file>
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c</file>
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fmc.c</file>
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c</file>
@@ -158,8 +173,10 @@
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h</file>
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h</file>
       <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\main.h</file>
       <file>$PROJ_DIR$\..\..\..\Utilities\Common\fonts.h</file>
       <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_SW\inc\isr.h</file>
       <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
       <file>$PROJ_DIR$\..\..\..\Utilities\Common\fonts.c</file>
       <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
@@ -168,6 +185,7 @@
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h</file>
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h</file>
       <file>$PROJ_DIR$\..\..\..\Utilities\STM32F429I-Discovery\stm32f429i_discovery_sdram.h</file>
+      <file>$PROJ_DIR$\..\stm32f4xx_it.h</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -190,6 +208,16 @@
           <file> 75</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 161 150 160 106 135 163 136 148 165 152 103 141 134 174 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 125 158 153 143 112 139 119 164 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c</name>
@@ -203,6 +231,16 @@
           <file> 39</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 143 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 143 142 166 146 137 123 155 174 164 136 158 139 176 144 159 151 125 153 112 119 106 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fmc.c</name>
@@ -216,6 +254,16 @@
           <file> 48</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 142 106 156 177 146 169 149 139 173 151 171 157 147 162 154 161 135 150 163 136 152 148 103 160 141 165 134 144 123 159 166 155 174 125 158 153 143 112 119 164 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c</name>
@@ -229,6 +277,16 @@
           <file> 41</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 119 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 143 142 166 146 137 123 155 174 164 119 136 158 139 176 106 144 159 151 125 153 112 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_ltdc.c</name>
@@ -242,6 +300,16 @@
           <file> 42</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 112 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112 148 135 163 136 165 142 161 150 160 106 152 103 141 134 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 174 125 158 153 143 139 119 164 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c</name>
@@ -255,6 +323,16 @@
           <file> 34</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 162 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 103 134 106 152 141 161 135 150 163 136 148 160 165 162 146 169 156 173 151 171 157 177 147 149 140 154 144 123 159 166 155 174 125 158 153 143 112 139 119 164 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.c</name>
@@ -268,6 +346,16 @@
           <file> 33</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 160 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 112 159 166 151 136 138 125 106 144 153 119 124 160 123 155 146 174 158 143 139 164 176 137 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Utilities\STM32F429I-Discovery\stm32f429i_discovery_lcd.c</name>
@@ -283,8 +371,12 @@
       </outputs>
       <inputs>
         <tool>
+          <name>ICCARM</name>
+          <file> 175 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 145 178 168 172</file>
+        </tool>
+        <tool>
           <name>BICOMP</name>
-          <file> 154 132 131 136 139 156 142 147 155 130 153 141 160 134 125 127 158 152 146 120 135 148 121 137 133 88 145 126 150 119 161 129 108 144 151 140 157 110 143 138 128 97 124 104 149 91 159 109 122 123</file>
+          <file> 171 147 146 151 154 173 157 162 172 145 169 156 177 149 140 142 175 168 161 135 150 163 136 152 148 103 160 141 165 134 178 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
         </tool>
       </inputs>
     </file>
@@ -311,8 +403,12 @@
       </outputs>
       <inputs>
         <tool>
+          <name>ICCARM</name>
+          <file> 145 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
           <name>BICOMP</name>
-          <file> 136 131 139 154 132 156 142 147 153 141 160 134 125 127 130 146 120 135 148 121 137 133 88 145 126 150 119 129 108 144 151 140 157 110 143 138 128 97 124 104 149 91 159 109 122 123</file>
+          <file> 151 146 154 171 147 173 157 162 169 156 177 149 140 142 145 161 135 150 163 136 152 148 103 160 141 165 134 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
         </tool>
       </inputs>
     </file>
@@ -328,6 +424,16 @@
           <file> 40</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 178 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 155 164 123 174 166 146 143 137 142 139 136 158 176 178 144 159 151 125 153 112 119 106 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\misc.c</name>
@@ -341,6 +447,16 @@
           <file> 37</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 134 103 152 141 161 135 150 163 136 148 160 165 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_crc.c</name>
@@ -354,6 +470,16 @@
           <file> 47</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 125 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 139 142 136 158 176 123 166 155 146 174 143 164 137 144 159 151 125 153 112 119 106 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\adc.c</name>
@@ -367,6 +493,16 @@
           <file> 61</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 84 76 79 82</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160 142 148 165 82 152 103 141 134 136 76 157 177 147 149 162 140 154 123 166 155 146 84 79 174 125 158 153 143 112 139 119 164 106 176 124 137 138 144 159 151 161 135 150 169 156 173 163 171</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>
@@ -380,6 +516,16 @@
           <file> 71</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 179 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 167 145</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 103 134 152 141 161 135 150 163 136 148 160 165 167 146 169 156 173 151 171 157 177 147 149 162 140 154 145 179 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c</name>
@@ -393,6 +539,16 @@
           <file> 63</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 137 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 135 142 148 163 136 165 106 161 150 160 137 152 103 141 134 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 174 125 158 153 143 112 139 119 164 176 124 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</name>
@@ -406,32 +562,54 @@
           <file> 35</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 106 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 148 135 163 136 165 142 106 161 150 160 152 103 141 134 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 174 125 158 153 143 112 139 119 164 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\gyro_acc.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 32</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 51</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 84 85 86 82 76</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176 142 86 158 139 159 166 151 136 174 143 164 137 76 144 82 125 153 112 119 106 124 138 84 85 157 152 177 148 147 103 149 160 162 141 140 165 154 134 123 155 146 161 135 150 169 156 173 163 171</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\isr.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 9</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 60</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 76 86 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 170 87 79 88 82 84</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 140 156 177 79 146 169 149 170 82 173 151 171 157 147 162 154 86 87 88 84 161 135 150 163 136 152 148 103 160 141 165 134 76 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\system_stm32f4xx.c</name>
@@ -445,19 +623,35 @@
           <file> 69</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 155 164 123 174 166 146 143 137 142 136 158 139 176 144 159 151 125 153 112 119 106 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\system_init.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 5</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 55</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 76 84 88 86 90 83</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 138 112 84 125 106 144 90 153 119 124 76 86 174 158 143 139 164 176 137 159 166 151 136 88 83 157 152 177 148 147 103 149 160 162 141 140 165 154 134 123 155 146 161 135 150 169 156 173 163 171</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c</name>
@@ -471,6 +665,16 @@
           <file> 44</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 176 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 140 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 135 148 163 136 165 161 150 160 176 152 103 141 134 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</name>
@@ -484,6 +688,16 @@
           <file> 57</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 124 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 106 125 159 166 151 136 112 138 144 153 119 124 123 155 146 174 158 143 139 164 176 137 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.c</name>
@@ -497,6 +711,16 @@
           <file> 62</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 165 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 144 153 124 119 142 159 166 151 136 125 112 106 138 123 155 146 174 158 143 139 164 176 137 165 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c</name>
@@ -510,19 +734,35 @@
           <file> 53</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 154 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157 173 146 162 142 151 171 147 154 106 169 156 177 149 140 161 135 150 163 136 152 148 103 160 141 165 134 144 123 159 166 155 174 125 158 153 143 112 139 119 164 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\led.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 12</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 49</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 76 87 84</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 149 142 177 140 136 157 147 162 154 87 152 148 103 160 141 165 134 123 166 155 146 76 84 174 125 158 153 143 112 139 119 164 106 176 124 137 138 144 159 151 161 135 150 169 156 173 163 171</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\button.c</name>
@@ -536,45 +776,73 @@
           <file> 54</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 76 89 84</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176 158 142 139 174 143 164 137 136 89 125 153 112 119 106 124 138 123 166 155 146 76 84 157 152 177 148 147 103 149 160 162 141 140 165 154 134 144 159 151 161 135 150 169 156 173 163 171</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\stm32f10x_it.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 16</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 66</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77 86 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 170 88 76 84 87 78 82</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 150 160 87 161 142 86 135 163 136 148 165 76 88 82 152 103 141 134 77 170 84 78 146 169 156 173 151 171 157 177 147 149 162 140 154 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\usart.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 7</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 58</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 76 86 84 87 82</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 119 153 124 87 125 112 106 138 142 76 86 174 158 143 139 164 176 137 161 135 150 163 136 84 82 157 152 177 148 147 103 149 160 162 141 140 165 154 134 146 169 156 173 151 171 144 123 159 166 155</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\system_func.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 17</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 50</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 174 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 76 84 88 79 85 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 149 135 177 140 163 136 142 79 157 147 162 154 161 150 84 86 152 148 103 160 141 165 134 76 88 85 174 125 158 153 143 112 139 119 164 106 176 124 137 138 146 169 156 173 151 171 144 123 159 166 155</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c</name>
@@ -588,19 +856,35 @@
           <file> 56</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 140 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 124 165 137 154 138 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146 166 137 143 142 123 155 174 164 140 136 158 139 176 106 144 159 151 125 153 112 119 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_HW\src\sound.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 4</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 52</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 78 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 76 84</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78 112 142 159 166 151 136 138 144 125 106 153 119 124 76 84 123 155 146 174 158 143 139 164 176 137 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\serial.c</name>
@@ -614,32 +898,54 @@
           <file> 65</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 85 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146 166 137 143 142 123 155 174 164 136 158 139 176 85 144 159 151 125 153 112 119 106 124 138 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134 86</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\zigbee.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 13</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 68</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 83 76</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123 174 155 164 166 146 143 137 142 136 158 139 176 76 86 144 159 151 125 153 112 119 106 124 138 83 84 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134 81</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\main.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 14</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 72</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 76 87 89 86 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 84 88 90 85 79 83 82 78</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 159 138 142 166 151 136 79 112 84 125 106 89 90 82 144 153 119 124 76 87 86 88 85 83 78 123 155 146 174 158 143 139 164 176 137 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\zgb_hal.c</name>
@@ -653,19 +959,35 @@
           <file> 67</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 84 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 86 81</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 136 142 163 165 135 148 161 150 160 81 152 103 141 134 86 146 169 156 173 151 171 157 177 147 149 162 140 154 84 144 123 159 166 155 174 125 158 153 143 112 139 119 164 106 176 124 137 138</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Darkholme_SW\src\CM_DXL_COM.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 8</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 59</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 76 90 88 142 123 166 146 151 169 173 163 155 156 161 136 171 135 150 159 144 174 157 125 152 158 177 153 148 143 147 112 103 139 149 119 160 164 162 106 141 176 140 124 165 137 154 138 134 79 87 84 82 80 89 78 83 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125 78 76 106 142 159 166 151 136 112 138 90 86 144 153 119 124 88 79 87 84 82 80 89 83 123 155 146 174 158 143 139 164 176 137 161 135 150 169 156 173 163 171 157 152 177 148 147 103 149 160 162 141 140 165 154 134</file>
+        </tool>
+      </inputs>
     </file>
     <forcedrebuild>
       <name>[REBUILD_ALL]</name>
