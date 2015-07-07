@@ -17,7 +17,7 @@
 
 
 /* Includes ------------------------------------------------------------------*/
-#include "cortexm3_macro.h"
+//#include "cortexm3_macro.h"
 
 /* Exported types ------------------------------------------------------------*/
 typedef enum {OFF = 0, ON = !OFF} PowerState;
@@ -41,8 +41,8 @@ typedef enum {OFF = 0, ON = !OFF} PowerState;
 
 
 /* Exported macro ------------------------------------------------------------*/
-#define __disable_interrupt() __SETPRIMASK()
-#define __enable_interrupt()  __RESETPRIMASK()
+#define __disable_interrupt() __disable_irq()
+#define __enable_interrupt()  __enable_irq()
 
 #define WORD_CAST(AA)		(*(u16 *)(&(AA)))
 
