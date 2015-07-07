@@ -172,9 +172,6 @@
         <name>$PROJ_DIR$\..\Darkholme_HW\src\led.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\..\Darkholme_HW\src\sound.c</name>
-      </file>
-      <file>
         <name>$PROJ_DIR$\..\Darkholme_HW\src\system_func.c</name>
       </file>
       <file>
