@@ -17,15 +17,15 @@
         <debug>1</debug>
         <option>
           <name>ExePath</name>
-          <state>Output\Exe</state>
+          <state>C:\Users\aziz\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>Output\Obj</state>
+          <state>C:\Users\aziz\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>Output\List</state>
+          <state>C:\Users\aziz\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\List</state>
         </option>
         <option>
           <name>Variant</name>
