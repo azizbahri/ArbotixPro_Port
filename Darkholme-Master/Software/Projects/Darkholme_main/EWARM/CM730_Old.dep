@@ -187,6 +187,7 @@
       <file>$PROJ_DIR$\..\CM730\stm32f10x_lib\inc\stm32f10x_spi.h</file>
       <file>$PROJ_DIR$\..\CM730\stm32f10x_lib\inc\stm32f10x_tim.h</file>
       <file>$PROJ_DIR$\..\CM730\stm32f10x_lib\inc\stm32f10x_rtc.h</file>
+      <file>$PROJ_DIR$\..\Darkholme_HW\src\system_init.c</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
