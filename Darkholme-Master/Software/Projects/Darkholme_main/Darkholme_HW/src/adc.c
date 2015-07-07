@@ -80,8 +80,8 @@ void __ISR_ADC(void)
 	}
 
 
-	ADC_RegularChannelConfig(ADC1, ADC_Channel[ADC_Channel_Index], 1 , ADC_SampleTime_239Cycles5);
-	ADC_RegularChannelConfig(ADC2, ADC_Channel[ADC_Channel_Index+8], 1 , ADC_SampleTime_239Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel[ADC_Channel_Index], 1 , ADC_SampleTime_480Cycles);
+	ADC_RegularChannelConfig(ADC2, ADC_Channel[ADC_Channel_Index+8], 1 , ADC_SampleTime_480Cycles);
 }
 
 
