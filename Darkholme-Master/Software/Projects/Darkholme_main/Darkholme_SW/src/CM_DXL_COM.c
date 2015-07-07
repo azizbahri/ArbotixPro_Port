@@ -7,7 +7,6 @@
 *******************************************************************************/
 #include "common_type.h"
 #include "dynamixel.h"
-#include "stm32f10x_lib.h"
 #include "system_func.h"
 #include "adc.h"
 #include "led.h"
