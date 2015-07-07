@@ -3,7 +3,7 @@
 <Workspace>
   <ConfigDictionary>
     
-  <CurrentConfigs><Project>darkholme/Template</Project><Project>CM730_Old/Debug</Project><Project>example/Template</Project></CurrentConfigs><CurrentProj>darkholme</CurrentProj><OverviewSelected>1</OverviewSelected></ConfigDictionary>
+  <CurrentConfigs><Project>CM730_Old/Debug</Project><Project>darkholme/Template</Project><Project>example/Template</Project></CurrentConfigs><CurrentProj>darkholme</CurrentProj><OverviewSelected>1</OverviewSelected></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
@@ -12,7 +12,7 @@
           
           
           
-        <Column0>432</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>449</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
         
@@ -33,7 +33,7 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>&lt;ws&gt;</ExpandedNode><ExpandedNode>&lt;ws&gt;/darkholme</ExpandedNode><ExpandedNode>&lt;ws&gt;/darkholme/User</ExpandedNode><ExpandedNode>&lt;ws&gt;/darkholme/User/Darkholme_HW</ExpandedNode><ExpandedNode>&lt;ws&gt;/darkholme/User/Darkholme_SW</ExpandedNode><ExpandedNode>&lt;ws&gt;/example</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/EWARM</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/EWARM/startup_stm32f429_439xx.s</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/STM32F429I-Discovery</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/STM32F4xx_StdPeriph_Driver</ExpandedNode><ExpandedNode>CM730_Old</ExpandedNode><ExpandedNode>CM730_Old/CM730_SW</ExpandedNode><ExpandedNode>darkholme</ExpandedNode><ExpandedNode>darkholme/Output</ExpandedNode><ExpandedNode>darkholme/STM32F429I-Discovery</ExpandedNode><ExpandedNode>darkholme/User</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>&lt;ws&gt;</ExpandedNode><ExpandedNode>&lt;ws&gt;/example</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/EWARM</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/EWARM/startup_stm32f429_439xx.s</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/STM32F429I-Discovery</ExpandedNode><ExpandedNode>&lt;ws&gt;/example/STM32F4xx_StdPeriph_Driver</ExpandedNode><ExpandedNode>CM730_Old</ExpandedNode><ExpandedNode>CM730_Old/CM730_SW</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
@@ -53,14 +53,14 @@
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_SW\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>6</YPos2><SelStart2>676</SelStart2><SelEnd2>676</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_HW\inc\usart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>9</YPos2><SelStart2>598</SelStart2><SelEnd2>598</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_HW\inc\system_init.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>6</YPos2><SelStart2>592</SelStart2><SelEnd2>592</SelEnd2></Tab><ActiveTab>2</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_SW\src\serial.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>11</YPos2><SelStart2>777</SelStart2><SelEnd2>799</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_HW\inc\sound.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>148</SelStart2><SelEnd2>148</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Pane/><Sizes><Pane><X>542584</X><Y>1000000</Y></Pane><Pane><X>457415</X><Y>1000000</Y></Pane></Sizes><SplitMode>4</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_SW\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>6</YPos2><SelStart2>786</SelStart2><SelEnd2>786</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_HW\inc\usart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>6</YPos2><SelStart2>621</SelStart2><SelEnd2>621</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_HW\inc\system_init.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>193</YPos2><SelStart2>5377</SelStart2><SelEnd2>5377</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_SW\src\serial.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>11</YPos2><SelStart2>799</SelStart2><SelEnd2>799</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_HW\inc\sound.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>122</SelStart2><SelEnd2>122</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_SW\inc\common_type.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>39</YPos2><SelStart2>1430</SelStart2><SelEnd2>1430</SelEnd2></Tab><ActiveTab>5</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Darkholme_SW\src\CM_DXL_COM.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>393</SelStart2><SelEnd2>393</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c\cmsis_iar.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>242</YPos2><SelStart2>6025</SelStart2><SelEnd2>6025</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\ExampleTemplate\Libraries\CMSIS\Include\core_cmFunc.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>331</YPos2><SelStart2>9638</SelStart2><SelEnd2>9651</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Pane/><Sizes><Pane><X>542584</X><Y>1000000</Y></Pane><Pane><X>457415</X><Y>1000000</Y></Pane></Sizes><SplitMode>4</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-03489630><key>iaridepm.enu1</key></Toolbar-03489630></Sizes></Row0></Top><Left><Row0><Sizes/></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>378</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>380</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>554745</sizeHorzCY><sizeVertCX>146413</sizeVertCX><sizeVertCY>291971</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>442</Bottom><Right>322</Right><x>-2</x><y>-2</y><FloatX>-892</FloatX><FloatY>0</FloatY><FloatWidth>521</FloatWidth><FloatHeight>658</FloatHeight><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>146413</sizeHorzCX><sizeHorzCY>291971</sizeHorzCY><sizeVertCX>237189</sizeVertCX><sizeVertCY>648175</sizeVertCY></Rect></Wnd1></Sizes></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-03489630><key>iaridepm.enu1</key></Toolbar-03489630></Sizes></Row0></Top><Left><Row0><Sizes/></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>354</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>356</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>519708</sizeHorzCY><sizeVertCX>146413</sizeVertCX><sizeVertCY>291971</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>442</Bottom><Right>322</Right><x>-2</x><y>-2</y><FloatX>-613</FloatX><FloatY>27</FloatY><FloatWidth>521</FloatWidth><FloatHeight>658</FloatHeight><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>146413</sizeHorzCX><sizeHorzCY>291971</sizeHorzCY><sizeVertCX>237189</sizeVertCX><sizeVertCY>648175</sizeVertCY></Rect></Wnd1></Sizes></Float></Positions>
   </Desktop>
 </Workspace>
 
