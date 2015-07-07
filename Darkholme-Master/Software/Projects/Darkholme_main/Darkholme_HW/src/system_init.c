@@ -5,9 +5,16 @@
 * Date               : 2010/08/25
 * Description        : functions about system init
 *******************************************************************************/
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
+#include "stm32f4xx_conf.h"
 #include "common_type.h"
 #include "system_init.h"
 #include "system_func.h"

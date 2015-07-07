@@ -5,10 +5,17 @@
 * Date               : 2011/01/15
 * Description        : functions about sensor control
 *******************************************************************************/
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "gyro_acc.h"
-#include "stm32f10x_type.h"
+#include "stm32f4xx_conf.h"
+//<<--DELETE #include "stm32f10x_type.h" //"stm32f10x_type.h" has been replaced by stm32f4xx.h
 #include "stm32f10x_lib.h"
 #include "system_init.h"
 #include "serial.h"

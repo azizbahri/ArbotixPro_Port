@@ -12,9 +12,9 @@
 * Date               : 07/07/2015
 * Description        : Main program body ported for STM32F429I
 *******************************************************************************/
-//test
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
+#include "stm32f429i_discovery.h"
+#include "stm32f4xx_conf.h"     //Replaced stm32f10x_lib.h, 
 #include "common_type.h"
 #include "led.h"
 //#include "eeprom.h"
