@@ -390,64 +390,64 @@ u8 getVoltage(void)
 }
 
 
-u16 EEPROM_Read( u32 Offset )
-{
-	u16* Adr;
-	Adr = (u16*)(EEPROM_START_ADDRESS + (Offset<<1));
-	return *Adr;
-}
-
-void EEPROM_Write( u32 Offset, u16 Data )
-{
-	volatile FLASH_Status FLASHStatus;
-	u32 Adr;
-	u16 cnt;
-	u16 Buffer[512];
-
-	Adr = EEPROM_START_ADDRESS + (Offset<<1);
-
-	if( (Data != EEPROM_Read(Offset)) && (Offset<512) )
-	{
-		for( cnt=0; cnt<512; cnt++ )
-		{
-			Buffer[cnt] = EEPROM_Read(cnt);
-		}
-		Buffer[Offset] = Data;
-
-		FLASH_Unlock();
-		/* Clear All pending flags */
-		FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
-
-		if( (Data==0) || (EEPROM_Read(Offset)==0xFFFF) )
-		{
-			FLASHStatus = FLASH_ProgramHalfWord( Adr, Data );
-		}
-		else
-		{		// Erase
-			/* Erase the FLASH pages */
-			FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
-
-			Adr = EEPROM_START_ADDRESS;
-
-			for( cnt=0; cnt<512; cnt++ )
-			{
-				if( Buffer[cnt] != 0xFFFF ) FLASHStatus = FLASH_ProgramHalfWord( Adr, Buffer[cnt] );
-				Adr += 2;
-			}
-		}
-
-		FLASH_Lock();
-	}
-}
-
-void EEPROM_Clear( void )
-{
-	volatile FLASH_Status FLASHStatus;
-
-	FLASH_Unlock();
-	FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
-	FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
-	FLASH_Lock();
-}
+//u16 EEPROM_Read( u32 Offset )
+//{
+//	u16* Adr;
+//	Adr = (u16*)(EEPROM_START_ADDRESS + (Offset<<1));
+//	return *Adr;
+//}
+//
+//void EEPROM_Write( u32 Offset, u16 Data )
+//{
+//	volatile FLASH_Status FLASHStatus;
+//	u32 Adr;
+//	u16 cnt;
+//	u16 Buffer[512];
+//
+//	Adr = EEPROM_START_ADDRESS + (Offset<<1);
+//
+//	if( (Data != EEPROM_Read(Offset)) && (Offset<512) )
+//	{
+//		for( cnt=0; cnt<512; cnt++ )
+//		{
+//			Buffer[cnt] = EEPROM_Read(cnt);
+//		}
+//		Buffer[Offset] = Data;
+//
+//		FLASH_Unlock();
+//		/* Clear All pending flags */
+//		FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
+//
+//		if( (Data==0) || (EEPROM_Read(Offset)==0xFFFF) )
+//		{
+//			FLASHStatus = FLASH_ProgramHalfWord( Adr, Data );
+//		}
+//		else
+//		{		// Erase
+//			/* Erase the FLASH pages */
+//			FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
+//
+//			Adr = EEPROM_START_ADDRESS;
+//
+//			for( cnt=0; cnt<512; cnt++ )
+//			{
+//				if( Buffer[cnt] != 0xFFFF ) FLASHStatus = FLASH_ProgramHalfWord( Adr, Buffer[cnt] );
+//				Adr += 2;
+//			}
+//		}
+//
+//		FLASH_Lock();
+//	}
+//}
+//
+//void EEPROM_Clear( void )
+//{
+//	volatile FLASH_Status FLASHStatus;
+//
+//	FLASH_Unlock();
+//	FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
+//	FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
+//	FLASH_Lock();
+//}
 
 /******************* (C) COPYRIGHT 2010 ROBOTIS *****END OF FILE****/
