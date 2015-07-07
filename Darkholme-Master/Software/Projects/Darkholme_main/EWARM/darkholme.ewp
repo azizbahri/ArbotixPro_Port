@@ -17,15 +17,15 @@
         <debug>1</debug>
         <option>
           <name>ExePath</name>
-          <state>Template\Exe</state>
+          <state>Output\Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>Template\Obj</state>
+          <state>Output\Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>Template\List</state>
+          <state>Output\List</state>
         </option>
         <option>
           <name>Variant</name>
@@ -308,6 +308,8 @@
           <state>$PROJ_DIR$\..\..\..\Libraries\CMSIS\Include</state>
           <state>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc</state>
           <state>$PROJ_DIR$\..\..\..\Utilities\STM32F429I-Discovery</state>
+          <state>C:\Users\aziz\Documents\GitHub\Darkholme\Darkholme-Master\Software\Projects\darkholme_main\Darkholme_HW\inc</state>
+          <state>C:\Users\aziz\Documents\GitHub\Darkholme\Darkholme-Master\Software\Projects\darkholme_main\Darkholme_SW\inc</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -599,7 +601,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>ArbotixPro_Port.srec</state>
+          <state>darkholme.srec</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -1017,8 +1019,56 @@
   </group>
   <group>
     <name>User</name>
+    <group>
+      <name>Darkholme_HW</name>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\adc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\button.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\gyro_acc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\led.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\sound.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\system_func.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\system_init.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\usart.c</name>
+      </file>
+    </group>
+    <group>
+      <name>Darkholme_SW</name>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_SW\src\CM_DXL_COM.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_SW\src\isr.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_SW\src\serial.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_SW\src\stm32f10x_it.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_SW\src\zgb_hal.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_SW\src\zigbee.c</name>
+      </file>
+    </group>
     <file>
-      <name>$PROJ_DIR$\..\main.c</name>
+      <name>$PROJ_DIR$\..\Darkholme_SW\src\main.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>

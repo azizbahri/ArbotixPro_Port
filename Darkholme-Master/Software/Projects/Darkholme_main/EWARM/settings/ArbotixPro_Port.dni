@@ -1,10 +1,3 @@
-[DebugChecksum]
-Checksum=2142343987
-[Exceptions]
-StopOnUncaught=_ 0
-StopOnThrow=_ 0
-[CodeCoverage]
-Enabled=_ 0
 [Stack]
 FillEnabled=0
 OverflowWarningsEnabled=1
@@ -15,6 +8,24 @@ UseTrigger=1
 TriggerName=main
 LimitSize=0
 ByteLimit=50
+[Interrupts]
+Enabled=1
+[MemConfig]
+Base=1
+Manual=0
+Ddf=1
+TypeViol=0
+Stop=1
+[Simulator]
+Freq=10000000
+MultiCoreRunAll=1
+[DebugChecksum]
+Checksum=1629551416
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CodeCoverage]
+Enabled=_ 0
 [CallStack]
 ShowArgs=0
 [Disassembly]
