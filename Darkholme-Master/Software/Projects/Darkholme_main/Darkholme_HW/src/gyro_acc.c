@@ -15,6 +15,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_conf.h"//Replaced stm32f10x_lib.h, 
+#include "stm32f4xx.h"
 //<<--DELETE #include "stm32f10x_type.h" //"stm32f10x_type.h" has been replaced by stm32f4xx.h
 #include "system_init.h"
 #include "serial.h"
