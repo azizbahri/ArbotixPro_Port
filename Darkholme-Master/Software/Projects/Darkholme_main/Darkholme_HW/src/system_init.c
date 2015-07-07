@@ -248,7 +248,7 @@ void RCC_Configuration(void)
 	if(HSEStartUpStatus == SUCCESS)
 	{
 		/* Enable Prefetch Buffer */
-		FLASH_PrefetchBufferCmd(FLASH_PrefetchBuffer_Enable);
+		FLASH_PrefetchBufferCmd(ENABLE);   //the argument for this has changed
 
 		/* Flash 2 wait state */
 		FLASH_SetLatency(FLASH_Latency_2);

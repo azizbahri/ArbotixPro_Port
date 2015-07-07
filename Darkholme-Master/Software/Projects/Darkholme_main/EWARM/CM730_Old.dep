@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>597813587</fileChecksum>
+  <fileChecksum>220312670</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -190,48 +190,7 @@
       <file>$PROJ_DIR$\..\Darkholme_HW\src\system_init.c</file>
     </outputs>
     <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 148</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 149</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\cortexm3_macro.s</name>
-      <outputs>
-        <tool>
-          <name>AARM</name>
-          <file> 88</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_adc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 51</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 25</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -245,16 +204,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_bkp.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 54</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -268,12 +217,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\misc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 41</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -287,16 +230,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_can.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 47</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 42</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -310,16 +243,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\system_init.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 79</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 73</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -333,16 +256,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_dma.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 16</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 28</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -356,16 +269,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_iwdg.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 13</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 26</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -379,12 +282,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_dac.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 27</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -398,16 +295,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\led.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 81</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 74</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -421,12 +308,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_dbgmcu.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 32</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -440,12 +321,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_fsmc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -459,16 +334,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_i2c.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 10</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 35</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -482,12 +347,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_crc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 70</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -501,16 +360,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_lib.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 5</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -524,16 +373,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_nvic.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 14</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -547,16 +386,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_pwr.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 15</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -570,16 +399,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\button.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 77</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 80</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -593,16 +412,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_rcc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 59</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 39</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -616,16 +425,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\gyro_acc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 86</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 72</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -639,16 +438,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_rtc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 61</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 30</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -662,16 +451,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\adc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 78</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 84</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -685,16 +464,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_flash.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 6</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 29</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -708,16 +477,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_gpio.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 4</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -731,12 +490,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_sdio.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -750,12 +503,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\sound.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 82</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -769,16 +516,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_spi.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 62</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 24</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -792,16 +529,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_exti.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 33</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -815,16 +542,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\system_func.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 75</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 83</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -838,16 +555,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\usart.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 76</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 87</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -861,16 +568,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_usart.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 64</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 21</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -884,16 +581,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\isr.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 53</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 52</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -907,16 +594,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 151</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 149</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -930,16 +607,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_systick.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 66</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 23</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -953,16 +620,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_tim1.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 65</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 18</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -976,16 +633,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\CM_DXL_COM.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 45</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 12</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -999,16 +646,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\stm32f10x_it.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 49</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 57</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1022,16 +659,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\zigbee.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 50</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 58</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1045,16 +672,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\zgb_hal.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 55</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 56</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1068,16 +685,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_APP\src\serial.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 44</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 67</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1091,16 +698,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_tim.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 63</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 20</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1114,12 +711,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_vector.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 22</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1133,16 +724,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_wwdg.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 40</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 17</file>
-        </tool>
-      </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
@@ -1189,6 +770,9 @@
     <forcedrebuild>
       <name>[MULTI_TOOL]</name>
       <tool>ILINK</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>[REBUILD_ALL]</name>
     </forcedrebuild>
   </configuration>
   <configuration>
