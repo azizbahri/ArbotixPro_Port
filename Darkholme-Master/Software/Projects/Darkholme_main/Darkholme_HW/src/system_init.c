@@ -52,7 +52,7 @@ void System_Configuration(void)
 
 	__disable_interrupt();
 	/* System Clocks Configuration */
-	RCC_Configuration();
+//	RCC_Configuration();            //RCC configuration is made in system_stm32f4xx.c
 	   
 	/* NVIC configuration */
 	NVIC_Configuration();
@@ -233,69 +233,69 @@ void SysTick_Configuration(void)
 * Output         : None
 * Return         : None
 *******************************************************************************/
-void RCC_Configuration(void)
-{
-	ErrorStatus HSEStartUpStatus;
-	/* RCC system reset(for debug purpose) */
-	RCC_DeInit();
-
-	/* Enable HSE */
-	RCC_HSEConfig(RCC_HSE_ON);
-
-	/* Wait till HSE is ready */
-	HSEStartUpStatus = RCC_WaitForHSEStartUp();
-
-	if(HSEStartUpStatus == SUCCESS)
-	{
-		/* Enable Prefetch Buffer */
-		FLASH_PrefetchBufferCmd(ENABLE);   //the argument for this has changed
-
-		/* Flash 2 wait state */
-		FLASH_SetLatency(FLASH_Latency_2);
-
-		/* HCLK = SYSCLK */
-		RCC_HCLKConfig(RCC_SYSCLK_Div1); 
-
-		/* PCLK2 = HCLK */
-		RCC_PCLK2Config(RCC_HCLK_Div1); 
-
-		/* PCLK1 = HCLK/2 */
-		RCC_PCLK1Config(RCC_HCLK_Div2);
-
-		/* PLLCLK = 8MHz * 9 = 72 MHz */
-		RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);
-
-		/* Enable PLL */ 
-		RCC_PLLCmd(ENABLE);
-
-		/* Wait till PLL is ready */
-		while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
-		{
-		}
-
-		/* Select PLL as system clock source */
-		RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
-
-		/* Wait till PLL is used as system clock source */
-		while(RCC_GetSYSCLKSource() != 0x08)
-		{
-		}
-	} 
- 
-	/* Enable peripheral clocks --------------------------------------------------*/
-
-	/* Enable USART5, GPIOA,and AFIO clocks */
-	/* Enable USART5, GPIOA, GPIOB, and AFIO clocks */
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 |
-							RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
-							RCC_APB2Periph_ADC1 | RCC_APB2Periph_ADC2 | RCC_APB2Periph_AFIO, ENABLE);
-
-	RCC_APB1PeriphClockCmd ( RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3 | RCC_APB1Periph_TIM4 | RCC_APB1Periph_TIM5 |
-							 RCC_APB1Periph_USART3 |  RCC_APB1Periph_UART5 | RCC_APB1Periph_SPI2|
-							 RCC_APB1Periph_BKP | RCC_APB1Periph_PWR, ENABLE);
-
-	PWR_BackupAccessCmd(ENABLE);
-}
+//void RCC_Configuration(void)
+//{
+//	ErrorStatus HSEStartUpStatus;
+//	/* RCC system reset(for debug purpose) */
+//	RCC_DeInit();
+//
+//	/* Enable HSE */
+//	RCC_HSEConfig(RCC_HSE_ON);
+//
+//	/* Wait till HSE is ready */
+//	HSEStartUpStatus = RCC_WaitForHSEStartUp();
+//
+//	if(HSEStartUpStatus == SUCCESS)
+//	{
+//		/* Enable Prefetch Buffer */
+//		FLASH_PrefetchBufferCmd(ENABLE);   //the argument for this has changed
+//
+//		/* Flash 2 wait state */
+//		FLASH_SetLatency(FLASH_Latency_2);
+//
+//		/* HCLK = SYSCLK */
+//		RCC_HCLKConfig(RCC_SYSCLK_Div1); 
+//
+//		/* PCLK2 = HCLK */
+//		RCC_PCLK2Config(RCC_HCLK_Div1); 
+//
+//		/* PCLK1 = HCLK/2 */
+//		RCC_PCLK1Config(RCC_HCLK_Div2);
+//
+//		/* PLLCLK = 8MHz * 9 = 72 MHz */
+//		RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);
+//
+//		/* Enable PLL */ 
+//		RCC_PLLCmd(ENABLE);
+//
+//		/* Wait till PLL is ready */
+//		while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+//		{
+//		}
+//
+//		/* Select PLL as system clock source */
+//		RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
+//
+//		/* Wait till PLL is used as system clock source */
+//		while(RCC_GetSYSCLKSource() != 0x08)
+//		{
+//		}
+//	} 
+// 
+//	/* Enable peripheral clocks --------------------------------------------------*/
+//
+//	/* Enable USART5, GPIOA,and AFIO clocks */
+//	/* Enable USART5, GPIOA, GPIOB, and AFIO clocks */
+//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 |
+//							RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
+//							RCC_APB2Periph_ADC1 | RCC_APB2Periph_ADC2 | RCC_APB2Periph_AFIO, ENABLE);
+//
+//	RCC_APB1PeriphClockCmd ( RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3 | RCC_APB1Periph_TIM4 | RCC_APB1Periph_TIM5 |
+//							 RCC_APB1Periph_USART3 |  RCC_APB1Periph_UART5 | RCC_APB1Periph_SPI2|
+//							 RCC_APB1Periph_BKP | RCC_APB1Periph_PWR, ENABLE);
+//
+//	PWR_BackupAccessCmd(ENABLE);
+//}
 
 
 
