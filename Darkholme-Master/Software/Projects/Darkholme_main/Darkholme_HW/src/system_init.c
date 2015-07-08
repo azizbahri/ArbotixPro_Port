@@ -503,7 +503,10 @@ void GPIO_Configuration(void)
 //	GPIO_InitStructure.GPIO_Pin = 	PIN_PA8 | PIN_PA14 | PIN_PA15 ;
 	GPIO_InitStructure.GPIO_Pin = 	PIN_PA8 ;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+        GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+        GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;    //DARKHOLME: this could be wrong, not sure what it does, must check
+        
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
 
