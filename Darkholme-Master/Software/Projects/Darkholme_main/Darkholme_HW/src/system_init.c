@@ -527,8 +527,8 @@ void GPIO_Configuration(void)
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
         
         //set the AF function for these pins
-	GPIO_PinAFConfig(GPIOA, PIN_CPU_RXD, GPIO_AF_USART1); 
-	GPIO_PinAFConfig(GPIOA, PIN_CPU_TXD, GPIO_AF_USART1);
+	GPIO_PinAFConfig(GPIOA, PIN_CPU_RXD, CPU_USART); 
+	GPIO_PinAFConfig(GPIOA, PIN_CPU_TXD, CPU_USART);
         
         
 	GPIO_InitStructure.GPIO_Pin = PIN_ADC4 | PIN_ADC5 | PIN_ADC6 | PIN_ADC7 | PIN_ADC8 | PIN_ADC9 | PIN_ADC10 | PIN_ADC11 ;
