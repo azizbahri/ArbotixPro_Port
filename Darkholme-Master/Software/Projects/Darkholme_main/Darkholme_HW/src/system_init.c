@@ -318,47 +318,47 @@ void USART_Configuration(u8 PORT, u32 baudrate)
 	{
 		Baudrate_DXL = baudrate;
 
-		USART_DeInit(USART1);
+		USART_DeInit(DXL_USART);
 		/* Configure the USART1 */
-		USART_Init(USART1, &USART_InitStructure);
+		USART_Init(DXL_USART, &USART_InitStructure);
 		
 		/* Enable USART1 Receive and Transmit interrupts */
-		USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+		USART_ITConfig(DXL_USART, USART_IT_RXNE, ENABLE);
 		//USART_ITConfig(USART1, USART_IT_TC, ENABLE);
 		
 		/* Enable the USART1 */
-		USART_Cmd(USART1, ENABLE);
+		USART_Cmd(DXL_USART, ENABLE);
 	}
 	else if( PORT == USART_ZIGBEE )
 	{
 		Baudrate_ZIGBEE = baudrate;
 
-		USART_DeInit(UART5);
+		USART_DeInit(ZIGBEE_USART);
 		/* Configure the UART5 */
-		USART_Init(UART5, &USART_InitStructure);
+		USART_Init(ZIGBEE_USART, &USART_InitStructure);
 		
 		
 		/* Enable UART5 Receive and Transmit interrupts */
-		USART_ITConfig(UART5, USART_IT_RXNE, ENABLE);
+		USART_ITConfig(ZIGBEE_USART, USART_IT_RXNE, ENABLE);
 		
 		/* Enable the UART5 */
-		USART_Cmd(UART5, ENABLE);
+		USART_Cmd(ZIGBEE_USART, ENABLE);
 	}
 	else if( PORT == USART_PC )
 	{
 		Baudrate_PC = baudrate;
 		
-		USART_DeInit(USART3);
+		USART_DeInit(PC_USART );
 		
 		/* Configure the USART3 */
-		USART_Init(USART3, &USART_InitStructure);
+		USART_Init(PC_USART , &USART_InitStructure);
 
 		/* Enable USART3 Receive and Transmit interrupts */
-		USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+		USART_ITConfig(PC_USART , USART_IT_RXNE, ENABLE);
 		//USART_ITConfig(USART3, USART_IT_TC, ENABLE);
 		
 		/* Enable the USART3 */
-		USART_Cmd(USART3, ENABLE);
+		USART_Cmd(PC_USART , ENABLE);
 	}
 	
 }
@@ -518,6 +518,7 @@ void GPIO_Configuration(void)
         DARKHOLME Edit: Belive the original settings for PIN_CPU_RXD is not correct, changing it to Cortex M4 solution
         */
         
+        //set PIN_CPU_RXD | PIN_CPU_TXD as alternate function pins
         GPIO_InitStructure.GPIO_Pin = PIN_CPU_RXD | PIN_CPU_TXD;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
@@ -525,7 +526,11 @@ void GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
         
-	
+        //set the AF function for these pins
+	GPIO_PinAFConfig(GPIOA, PIN_CPU_RXD, GPIO_AF_USART1); 
+	GPIO_PinAFConfig(GPIOA, PIN_CPU_TXD, GPIO_AF_USART1);
+        
+        
 	GPIO_InitStructure.GPIO_Pin = PIN_ADC4 | PIN_ADC5 | PIN_ADC6 | PIN_ADC7 | PIN_ADC8 | PIN_ADC9 | PIN_ADC10 | PIN_ADC11 ;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
@@ -550,7 +555,10 @@ void GPIO_Configuration(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
-
+/*
+        DARKHOLME Edit: 
+        both RX and TX must be set as AF on this board
+        */
 	GPIO_InitStructure.GPIO_Pin = PIN_DXL_RXD | PIN_PC_RXD ;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
