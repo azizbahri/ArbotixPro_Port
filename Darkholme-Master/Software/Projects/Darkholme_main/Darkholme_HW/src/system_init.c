@@ -514,19 +514,23 @@ void GPIO_Configuration(void)
 //	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
 //	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-
-	GPIO_InitStructure.GPIO_Pin = PIN_CPU_RXD;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
+        /*
+        DARKHOLME Edit: Belive the original settings for PIN_CPU_RXD is not correct, changing it to Cortex M4 solution
+        */
+        
+        GPIO_InitStruct.GPIO_Pin = PIN_CPU_RXD | PIN_CPU_TXD;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+        
 	
 	GPIO_InitStructure.GPIO_Pin = PIN_ADC4 | PIN_ADC5 | PIN_ADC6 | PIN_ADC7 | PIN_ADC8 | PIN_ADC9 | PIN_ADC10 | PIN_ADC11 ;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
-	GPIO_InitStructure.GPIO_Pin = PIN_CPU_TXD;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
 
 	GPIO_InitStructure.GPIO_Pin = PIN_SW_MODE | PIN_SW_START ;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
