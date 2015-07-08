@@ -559,6 +559,7 @@ void GPIO_Configuration(void)
         DARKHOLME Edit: 
         both RX and TX must be set as AF on this board
         */
+        //DARKHOLME TODO: setup pins for AF mode
 	GPIO_InitStructure.GPIO_Pin = PIN_DXL_RXD | PIN_PC_RXD ;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -574,12 +575,13 @@ void GPIO_Configuration(void)
 
 	*/
 
-
+        //DARKHOLME TODO: set pins for AF mode
 	GPIO_InitStructure.GPIO_Pin = PIN_DXL_TXD | PIN_PC_TXD | PIN_SIG_SCK  | PIN_SIG_MOSI | PIN_SIG_MISO | PIN_BUZZER  ;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
+       
 
 	GPIO_InitStructure.GPIO_Pin = PIN_ADC14 | PIN_ADC15 ;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
