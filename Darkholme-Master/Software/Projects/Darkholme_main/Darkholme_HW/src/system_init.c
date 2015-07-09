@@ -663,24 +663,58 @@ void GPIO_Configuration(void)
   
   /*-------- Configuring Enable pins --------*/
   //PIN_ENABLE_RXD
-    vGPIO_Configure(PORT_ENABLE_RXD ,
+  vGPIO_Configure(PORT_ENABLE_RXD ,
                   PIN_ENABLE_RXD ,
                   GPIO_Mode_OUT,
                   GPIO_Speed_50MHz,
                   GPIO_OType_PP,
                   GPIO_PuPd_UP);
   //PIN_ENABLE_DXLPWR
-      vGPIO_Configure(PORT_ENABLE_DXLPWR ,
+  vGPIO_Configure(PORT_ENABLE_DXLPWR ,
                   PIN_ENABLE_DXLPWR ,
                   GPIO_Mode_OUT,
                   GPIO_Speed_50MHz,
                   GPIO_OType_PP,
                   GPIO_PuPd_UP);
-      
-  GPIO_InitStructure.GPIO_Pin = PIN_BOOT1  | PIN_LED3 ;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-  GPIO_Init(GPIOB, &GPIO_InitStructure); //DARKHOLME TODO: chnage the port
+  
+  /*-------- Configuring LED Pins --------*/
+  
+  //PIN_LED3
+  vGPIO_Configure(PORT_LED3 ,
+                  PIN_LED3 ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);    
+  //PIN_LED4
+  vGPIO_Configure(PORT_LED4 ,
+                  PIN_LED4 ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_LED_TX
+  vGPIO_Configure(PORT_LED_TX ,
+                  PIN_LED_TX ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_LED_RX
+  vGPIO_Configure(PORT_LED_RX ,
+                  PIN_LED_RX ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_LED2
+  vGPIO_Configure(PORT_LED2 ,
+                  PIN_LED2 ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+
   
   /*
   DARKHOLME Edit: 
@@ -735,7 +769,7 @@ void GPIO_Configuration(void)
   *******************************************************************************/
   
   //DARKHOLME TODO: split these up, as they maybe on different ports 
-  GPIO_InitStructure.GPIO_Pin = PIN_LED4 | PIN_PC7 | PIN_ENABLE_ZIGBEE | PIN_ENABLE_TXD | PIN_SIG_ACC_CS | PIN_SIG_GYRO_CS | PIN_LED_TX | PIN_LED_RX | PIN_LED2  ;
+  GPIO_InitStructure.GPIO_Pin =  PIN_PC7 | PIN_ENABLE_ZIGBEE | PIN_ENABLE_TXD | PIN_SIG_ACC_CS | PIN_SIG_GYRO_CS | ;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
