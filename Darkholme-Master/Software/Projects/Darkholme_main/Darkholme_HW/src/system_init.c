@@ -670,7 +670,14 @@ void GPIO_Configuration(void)
                   GPIO_OType_PP,
                   GPIO_PuPd_UP);
   //PIN_ENABLE_DXLPWR
-  GPIO_InitStructure.GPIO_Pin = PIN_ENABLE_RXD | PIN_ENABLE_DXLPWR | PIN_BOOT1  | PIN_LED3 ;
+      vGPIO_Configure(PORT_ENABLE_DXLPWR ,
+                  PIN_ENABLE_DXLPWR ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+      
+  GPIO_InitStructure.GPIO_Pin = PIN_BOOT1  | PIN_LED3 ;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
   GPIO_Init(GPIOB, &GPIO_InitStructure); //DARKHOLME TODO: chnage the port
