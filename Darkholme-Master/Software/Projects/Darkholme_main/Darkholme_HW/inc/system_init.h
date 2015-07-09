@@ -21,7 +21,13 @@
 #define DXL_USART       USART1
 #define PC_USART        USART3
 #define ZIGBEE_USART    UART5
-#define CPU_USART       USART4  //unused
+#define CPU_USART       UART4  //unused
+
+///////////////////AF\//////////////////////////////////////////////////////////
+#define DXL_USART_AF       GPIO_AF_USART1
+#define PC_USART_AF        GPIO_AF_USART3
+#define ZIGBEE_USART_AF    GPIO_AF_UART5
+#define CPU_USART_AF       GPIO_AF_UART4  //unused
 ///////////////////PORTA//////////////////////////////////////////////////////////
 #define PIN_ADC4				GPIO_Pin_0
 #define PIN_ADC5				GPIO_Pin_1

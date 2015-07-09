@@ -187,6 +187,7 @@
       <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Obj\stm32f10x_flash.o</file>
       <file>$PROJ_DIR$\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</file>
       <file>$PROJ_DIR$\..\ExampleTemplate\Projects\main\system_stm32f4xx.c</file>
+      <file>$PROJ_DIR$\..\ExampleTemplate\Projects\main\main.c</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\..\CM730\CM730_HW\src\system_init.c</name>
