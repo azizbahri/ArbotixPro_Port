@@ -735,21 +735,26 @@ void GPIO_Configuration(void)
   GPIO_PinAFConfig(PORT_DXL_TXD, PIN_DXL_TXD, DXL_USART_AF);
   
   
+  /*-------- Configuring PC uart pins--------*/
   
-  //initialize PC uart pins
-  GPIO_InitStructure.GPIO_Pin = PIN_PC_RXD | PIN_PC_TXD;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
+  //PIN_PC_RXD
+  vGPIO_Configure(PORT_PC_RXD ,
+                  PIN_PC_RXD ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  GPIO_PinAFConfig(PORT_PC_RXD, PIN_PC_RXD, PC_USART_AF);
   
-  //set the AF function for these pins
-  GPIO_PinAFConfig(PORT_PC_RXD, PIN_DXL_RXD, DXL_USART_AF); 
-  GPIO_PinAFConfig(PORT_PC_TXD, PIN_DXL_TXD, DXL_USART_AF);
-  
-  
-  
+  //PIN_PC_TXD
+  vGPIO_Configure(PORT_PC_TXD ,
+                  PIN_PC_TXD ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  GPIO_PinAFConfig(PORT_PC_TXD, PIN_PC_TXD, PC_USART_AF);
+
   //DARKHOLME TODO: Set pins for SPI 
   GPIO_InitStructure.GPIO_Pin =PIN_SIG_SCK  | PIN_SIG_MOSI | PIN_SIG_MISO | PIN_BUZZER  ;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
