@@ -715,24 +715,25 @@ void GPIO_Configuration(void)
                   GPIO_OType_PP,
                   GPIO_PuPd_UP);
 
-  
-  /*
-  DARKHOLME Edit: 
-  both RX and TX must be set as AF on this board
-  */
-  //DARKHOLME TODO: setup pins for AF mode
-  
-  //initialize DXL uart pins
-  GPIO_InitStructure.GPIO_Pin = PIN_DXL_RXD | PIN_DXL_TXD;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-  
-  //set the AF function for these pins
+  /*-------- Configuring DXL uart pins --------*/
+  //PIN_DXL_RXD
+  vGPIO_Configure(PORT_DXL_RXD ,
+                  PIN_DXL_RXD ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
   GPIO_PinAFConfig(PORT_DXL_RXD, PIN_DXL_RXD, DXL_USART_AF); 
+
+  //PIN_DXL_TXD
+  vGPIO_Configure(PORT_DXL_RXD ,
+                  PIN_DXL_RXD ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
   GPIO_PinAFConfig(PORT_DXL_TXD, PIN_DXL_TXD, DXL_USART_AF);
+  
   
   
   //initialize PC uart pins
