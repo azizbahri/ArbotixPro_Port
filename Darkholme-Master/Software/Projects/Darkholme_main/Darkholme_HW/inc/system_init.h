@@ -70,7 +70,7 @@
 //#define PORT_LED6_R				GPIOA
 #define PORT_PA8				GPIOA
 
-#define PORT_CPU_TXD			GPIOA1
+#define PORT_CPU_TXD			GPIOA
 #define PORT_CPU_RXD			GPIOA
 
 //#define PORT_LED6_G				GPIOA
@@ -223,6 +223,12 @@ void System_Configuration(void);
 
 void SPI_Configuration(void);
 void Buzzer_Configuration(void);
+void vGPIO_Configure(GPIO_TypeDef* GPIOx,
+                     uint32_t GPIO_Pin,
+                     GPIOMode_TypeDef GPIO_Mode,
+                     GPIOSpeed_TypeDef GPIO_Speed,
+                     GPIOOType_TypeDef GPIO_OType,
+                     GPIOPuPd_TypeDef GPIO_PuPd);
 
 
 
