@@ -749,6 +749,15 @@ void GPIO_Configuration(void)
                   GPIO_PuPd_UP);
   GPIO_PinAFConfig(PORT_DXL_TXD, PIN_DXL_TXD, DXL_USART_AF);
   
+  //PIN_ENABLE_TXD
+  vGPIO_Configure(PORT_ENABLE_TXD ,
+                  PIN_ENABLE_TXD ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  
   
   /*-------- Configuring PC uart pins--------*/
   
@@ -808,38 +817,55 @@ void GPIO_Configuration(void)
                   GPIO_Mode_OUT,
                   GPIO_Speed_50MHz,
                   GPIO_OType_PP,
-                  GPIO_PuPd_NOPULL);
+                  GPIO_PuPd_UP);
 
 
+  /*-------- Configuring Chip select pins --------*/
   
-  //DARKHOLME TODO: split these up, as they maybe on different ports 
-  GPIO_InitStructure.GPIO_Pin =   PIN_ENABLE_ZIGBEE | PIN_ENABLE_TXD | PIN_SIG_ACC_CS | PIN_SIG_GYRO_CS | ;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_Init(GPIOC, &GPIO_InitStructure);
+  //PIN_SIG_ACC_CS
+  vGPIO_Configure(PORT_SIG_ACC_CS ,
+                  PIN_SIG_ACC_CS ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  //PIN_SIG_GYRO_CS
+  vGPIO_Configure(PORT_SIG_GYRO_CS ,
+                  PIN_SIG_GYRO_CS ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
   
   
-  GPIO_InitStructure.GPIO_Pin =  PIN_ZIGBEE_TXD ;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-  GPIO_Init(GPIOC, &GPIO_InitStructure);
+  /*-------- Configuring Zigbee pins--------*/
+  //PIN_ENABLE_ZIGBEE
+  vGPIO_Configure(PORT_ENABLE_ZIGBEE ,
+                  PIN_ENABLE_ZIGBEE ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_ZIGBEE_TXD
+  vGPIO_Configure(PORT_ZIGBEE_TXD ,
+                  PIN_ZIGBEE_TXD ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  GPIO_PinAFConfig(PORT_ZIGBEE_TXD, PIN_ZIGBEE_TXD, ZIGBEE_USART_AF);
   
+  //PIN_ZIGBEE_RXD
+  vGPIO_Configure(PORT_PC_RXD ,
+                  PIN_PC_RXD ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  GPIO_PinAFConfig(PORT_PC_RXD, PIN_PC_RXD, ZIGBEE_USART_AF);
   
-  
-  
-  
-  /*******************************************************************************
-  // PORTD CONFIG
-  *******************************************************************************/
-  
-  GPIO_InitStructure.GPIO_Pin = PIN_ZIGBEE_RXD;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOD, &GPIO_InitStructure);
-  
-  /* Configure USART1 Remap enable */
-  GPIO_PinRemapConfig( GPIO_Remap_USART1, ENABLE);
-  //	GPIO_PinRemapConfig( GPIO_Remap_SWJ_Disable, ENABLE);
+
 }
 
 /*******************************************************************************
