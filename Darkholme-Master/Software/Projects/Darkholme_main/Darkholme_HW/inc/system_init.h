@@ -16,18 +16,22 @@
 /* Exported constants --------------------------------------------------------*/
 
 
-
+//when changing peripherals, make sure to change the corrosponding AFs
 ///////////////////UART\//////////////////////////////////////////////////////////
 #define DXL_USART       USART1
 #define PC_USART        USART3
 #define ZIGBEE_USART    UART5
 #define CPU_USART       UART4  //unused
 
+///////////////////SPI\//////////////////////////////////////////////////////////
+#define IMU_SPI         SPI2
+
 ///////////////////AF\//////////////////////////////////////////////////////////
 #define DXL_USART_AF       GPIO_AF_USART1
 #define PC_USART_AF        GPIO_AF_USART3
 #define ZIGBEE_USART_AF    GPIO_AF_UART5
 #define CPU_USART_AF       GPIO_AF_UART4  //unused
+#define SPI_AF             GPIO_AF_SPI2     
 ///////////////////PORTA//////////////////////////////////////////////////////////
 #define PIN_ADC4				GPIO_Pin_0
 #define PIN_ADC5				GPIO_Pin_1

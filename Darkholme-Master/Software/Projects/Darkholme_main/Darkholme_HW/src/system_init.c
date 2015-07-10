@@ -479,7 +479,7 @@ void SPI_Configuration(void)
   SPI_InitStructure.SPI_CRCPolynomial = 7;
   
   //SPI_Init(SPI1, &SPI_InitStructure);
-  SPI_Init(SPI2, &SPI_InitStructure);
+  SPI_Init(IMU_SPI, &SPI_InitStructure);
   
   
   /* Enable SPI2 RXNE interrupt */
@@ -755,11 +755,46 @@ void GPIO_Configuration(void)
                   GPIO_PuPd_UP);
   GPIO_PinAFConfig(PORT_PC_TXD, PIN_PC_TXD, PC_USART_AF);
 
-  //DARKHOLME TODO: Set pins for SPI 
-  GPIO_InitStructure.GPIO_Pin =PIN_SIG_SCK  | PIN_SIG_MOSI | PIN_SIG_MISO | PIN_BUZZER  ;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);
+  
+  /*-------- Configuring SCK, MISO, MOSI --------*/
+  
+  //PIN_SIG_SCK
+  vGPIO_Configure(PORT_SIG_SCK ,
+                  PIN_SIG_SCK ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  GPIO_PinAFConfig(PORT_SIG_SCK, PIN_SIG_SCK, SPI_AF);
+  
+  //PIN_SIG_MOSI
+    vGPIO_Configure(PORT_SIG_MOSI ,
+                  PIN_SIG_MOSI ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  GPIO_PinAFConfig(PORT_SIG_MOSI, PIN_SIG_MOSI, SPI_AF);
+  
+  //PIN_SIG_MISO
+  vGPIO_Configure(PORT_SIG_MISO ,
+                  PIN_SIG_MISO ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  GPIO_PinAFConfig(PORT_SIG_MISO, PIN_SIG_MISO, SPI_AF);
+  
+  
+  /*-------- Configuring Buzzer Pin --------*/
+  //PIN_BUZZER
+  vGPIO_Configure(PORT_BUZZER ,
+                  PIN_BUZZER ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+
   
   
   
