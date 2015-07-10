@@ -9,7 +9,7 @@
 #include "zgb_hal.h"
 #include "zigbee.h"
 #include "common_type.h"
-#include "stm32f10x_type.h"
+#include "stm32f4xx.h"
 #include "system_init.h"
 #include "usart.h"
 
