@@ -809,7 +809,7 @@ void Process(void)
               (gbParameterLength == 6) )
           {
             if (gbStartAddress < CONTROL_TABLE_LEN) {
-            	BKP_WriteBackupRegister((gbStartAddress+1)<<2, gbpParameter[1]);
+            	//BKP_WriteBackupRegister((gbStartAddress+1)<<2, gbpParameter[1]);      //Remove Backup
             	//ROM_CAST(gbStartAddress) = gbpControlTable[gbStartAddress] = gbpParameter[1];
             }
             else {
@@ -864,7 +864,7 @@ void WriteControlTable(void)
     {
 
       WORD_CAST(gbpControlTable[bPointer]) = WORD_CAST(gbpParameter[bCount]);
-      if(bPointer < ROM_CONTROL_TABLE_LEN) BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));
+      if(bPointer < ROM_CONTROL_TABLE_LEN) ;//BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));        removed
       bCount++;
 
 /*
@@ -879,7 +879,7 @@ void WriteControlTable(void)
     else //if(gbpDataSize[bPointer] == 1)//length was already checked.
     {
       gbpControlTable[bPointer] = gbpParameter[bCount];
-      if(bPointer < ROM_CONTROL_TABLE_LEN) BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));
+      if(bPointer < ROM_CONTROL_TABLE_LEN);// BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));        Removed
     }
   }
 }
