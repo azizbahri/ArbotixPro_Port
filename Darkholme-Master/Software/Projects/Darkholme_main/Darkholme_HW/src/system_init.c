@@ -233,11 +233,11 @@ void Timer_Configuration(void)
 void SysTick_Configuration(void)
 {
   //TODO: fix these 
-//  /* SysTick end of count event each 1ms with input clock equal to 9MHz (HCLK/8, default) */
-//  SysTick_SetReload(9000);
-//  
-//  /* Enable SysTick interrupt */
-//  SysTick_ITConfig(ENABLE);
+  /* SysTick end of count event each 1ms with input clock equal to 9MHz (HCLK/8, default) */
+  SysTick_SetReload(9000);
+  
+  /* Enable SysTick interrupt */
+  SysTick_ITConfig(ENABLE);
 }
 
 

@@ -334,18 +334,21 @@ u8 getResetSource(void) {
 
 void mDelay(u32 nTime)
 {
-  //TODO: Uncomment all below, and then fix errors
+
+  SysTick_Config(SystemCoreClock/1000);
 //	  /* Enable the SysTick Counter */
 //	  SysTick_CounterCmd(SysTick_Counter_Enable);
+//            SysTick_Config(SystemCoreClock/1000);
+	  gwTimingDelay = nTime;
 //
-//	  gwTimingDelay = nTime;
-//
-//	  while(gwTimingDelay != 0);
+	  while(gwTimingDelay != 0);
 //
 //	  /* Disable SysTick Counter */
 //	  SysTick_CounterCmd(SysTick_Counter_Disable);
 //	  /* Clear SysTick Counter */
 //	  SysTick_CounterCmd(SysTick_Counter_Clear);
+  
+  
 
 }
 
