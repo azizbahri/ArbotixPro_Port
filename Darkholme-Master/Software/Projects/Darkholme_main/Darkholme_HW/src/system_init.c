@@ -644,6 +644,21 @@ void GPIO_Configuration(void)
                   GPIO_OType_PP,
                   GPIO_PuPd_NOPULL);
 
+  //PIN_ADC14
+  vGPIO_Configure(PORT_ADC14 ,
+                  PIN_ADC14 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  
+  //PIN_ADC15
+  vGPIO_Configure(PORT_ADC15 ,
+                  PIN_ADC15 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
   
   /*-------- Configuring Switches --------*/
   //PIN_SW_MODE
@@ -795,22 +810,10 @@ void GPIO_Configuration(void)
                   GPIO_OType_PP,
                   GPIO_PuPd_NOPULL);
 
-  
-  
-  
-  GPIO_InitStructure.GPIO_Pin = PIN_ADC14 | PIN_ADC15 ;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);
-  
-  
-  
-  
-  /*******************************************************************************
-  // PORTC CONFIG
-  *******************************************************************************/
+
   
   //DARKHOLME TODO: split these up, as they maybe on different ports 
-  GPIO_InitStructure.GPIO_Pin =  PIN_PC7 | PIN_ENABLE_ZIGBEE | PIN_ENABLE_TXD | PIN_SIG_ACC_CS | PIN_SIG_GYRO_CS | ;
+  GPIO_InitStructure.GPIO_Pin =   PIN_ENABLE_ZIGBEE | PIN_ENABLE_TXD | PIN_SIG_ACC_CS | PIN_SIG_GYRO_CS | ;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
