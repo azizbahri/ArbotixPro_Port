@@ -30,6 +30,12 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 #include "main.h"
+#include "usart.h"
+#include "isr.h"
+#include "system_func.h"
+#include "system_init.h"
+#include "led.h"
+#include "CM_DXL_COM.h"
 
 /** @addtogroup Template
   * @{
@@ -42,6 +48,17 @@
 /* Private function prototypes -----------------------------------------------*/
 void USART1_IRQHandler(void);
 /* Private functions ---------------------------------------------------------*/
+
+/* Current mode */
+extern u16 gwCurrentMode;   // from mode.c
+extern vu16 CCR1_Val;       // from system_init.c
+extern vu16 CCR2_Val;       // from system_init.c
+extern vu16 CCR3_Val;       // from system_init.c
+extern vu16 CCR4_Val;       // from system_init.c
+
+//vu32 capture = 0;
+vu8 Counter = 0;
+vu16 gwCounter1 = 0;
 
 /******************************************************************************/
 /*            Cortex-M4 Processor Exceptions Handlers                         */
@@ -140,12 +157,10 @@ void PendSV_Handler(void)
   * @param  None
   * @retval None
   */
-__IO uint32_t SysTicDelay;
+
 void SysTick_Handler(void)
 {
-  if(SysTicDelay != 0){
-    SysTicDelay--;
-  }
+__ISR_DELAY();
 }
 
 /******************************************************************************/
@@ -164,19 +179,109 @@ void SysTick_Handler(void)
 {
 }*/
 void USART1_IRQHandler(void){
-  GPIOG->ODR ^= GPIO_Pin_13;
+  ISR_USART_DXL();
+}
 
-	//check the type of interrupt to make sure we have received some data.
-	if( USART_GetITStatus(USART1, USART_IT_RXNE) ){
-		char t = USART1->DR; //Read the character that we have received
-                
 
-	}
+/*******************************************************************************
+* Function Name  : USART3_IRQHandler
+* Description    : This function handles USART3 global interrupt request.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void USART3_IRQHandler(void)
+{
+	ISR_USART_PC();
+}
+
+/*******************************************************************************
+* Function Name  : UART5_IRQHandler
+* Description    : This function handles UART5 global interrupt request.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void UART5_IRQHandler(void)
+{
+	ISR_USART_ZIGBEE();
 }
 
 /**
   * @}
   */ 
+/*******************************************************************************
+* Function Name  : ADC1_2_IRQHandler
+* Description    : This function handles ADC1 and ADC2 global interrupts requests.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void ADC_IRQHandler(void)
+{
+  ISR_ADC();
+}
 
+/*******************************************************************************
+* Function Name  : TIM2_IRQHandler
+* Description    : This function handles TIM2 global interrupt request.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TIM2_IRQHandler(void)
+{
+  static byte b1Sec=0;
+
+	if (TIM_GetITStatus(TIM2, TIM_IT_CC4) != RESET) // 120us, 8000Hz
+	{
+		TIM_ClearITPendingBit(TIM2, TIM_IT_CC4);
+		ISR_ADC();
+    TIM_SetCounter(TIM2, 0);
+    TIM_SetCompare4(TIM2, CCR4_Val);
+
+
+		if( !( gwCounter1 & 7 ) ) // 840us
+		{
+			ISR_1ms_TIMER();
+		}
+
+		if( !( gwCounter1 & 3 ) ) // 480us, 2000Hz
+		{
+			ISR_LED_RGB_TIMER();
+
+		}
+		if( !( gwCounter1 & 31 ) ) // 3840us, 250Hz
+		{
+			ISR_SPI_READ();
+			__ISR_Buzzer_Manage();
+			GB_BUTTON = ReadButton();
+		}
+
+		if( !( gwCounter1 & 0x3FF ) ) // 125ms
+		{
+			LED_SetState(LED_RX,OFF);
+			LED_SetState(LED_TX,OFF);
+
+			if( !(b1Sec&0x07) )
+			{
+				ISR_BATTERY_CHECK();
+			}
+
+			b1Sec++;
+
+
+		}
+
+
+
+		/*
+		if( !( Counter1 & 32 ) ) // 3960us, 250Hz
+		{
+
+		}
+		*/
+		gwCounter1++;
+}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
