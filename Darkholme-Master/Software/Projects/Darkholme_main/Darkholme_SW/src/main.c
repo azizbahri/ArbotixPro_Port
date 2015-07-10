@@ -26,7 +26,7 @@
 #include "adc.h"
 #include "zigbee.h"
 #include "CM_DXL_COM.h"
-#include "sound.h"
+//#include "sound.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -66,7 +66,7 @@ int main(void)
 	BufferClear(USART_PC);
 	BufferClear(USART_ZIGBEE);
 
-	setBuzzerOff();
+	//setBuzzerOff();       remove sound
 
 /*
 	for(bCount =0; bCount < 50; bCount++ )

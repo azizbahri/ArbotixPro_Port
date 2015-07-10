@@ -82,15 +82,16 @@ void ISR_BATTERY_CHECK(void)
 
 	if ( bLowBatteryCount == LOW_BATTERY_COUNT  )
 	{
-		setBuzzerPlayLength(SOUND_LOW_VOLTAGE_LENGTH);
-		setBuzzerData(SOUND_LOW_VOLTAGE_DATA);
-
-
-		if(!getBuzzerState())
-		{
-
-			PlayBuzzer();
-		}
+          //Removed sound
+//		setBuzzerPlayLength(SOUND_LOW_VOLTAGE_LENGTH);
+//		setBuzzerData(SOUND_LOW_VOLTAGE_DATA);
+//
+//
+//		if(!getBuzzerState())
+//		{
+//
+//			PlayBuzzer();
+//		}
 	}
 
 }

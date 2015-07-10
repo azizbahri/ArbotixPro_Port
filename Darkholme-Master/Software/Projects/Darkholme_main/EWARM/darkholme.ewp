@@ -1061,9 +1061,6 @@
         <name>$PROJ_DIR$\..\Darkholme_SW\src\serial.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\..\Darkholme_SW\src\stm32f10x_it.c</name>
-      </file>
-      <file>
         <name>$PROJ_DIR$\..\Darkholme_SW\src\zgb_hal.c</name>
       </file>
       <file>

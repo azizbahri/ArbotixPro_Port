@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>289881777</fileChecksum>
+  <fileChecksum>2269972532</fileChecksum>
   <configuration>
     <name>Template</name>
     <outputs>
@@ -188,6 +188,12 @@
       <file>$PROJ_DIR$\..\..\..\Utilities\Common\fonts.c</file>
       <file>$PROJ_DIR$\..\ExampleTemplate\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\iar\startup_stm32f429_439xx.s</file>
       <file>$PROJ_DIR$\..\ExampleTemplate\Projects\main\main.c</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\List\darkholme.map</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
+      <file>$PROJ_DIR$\stm32f4xx_flash.icf</file>
       <file>$PROJ_DIR$\..\CM730\CM730_HW\src\usart.c</file>
     </outputs>
     <file>
@@ -364,6 +370,10 @@
       <name>$PROJ_DIR$\..\Darkholme_SW\src\zigbee.c</name>
       <outputs>
         <tool>
+          <name>ICCARM</name>
+          <file> 94</file>
+        </tool>
+        <tool>
           <name>BICOMP</name>
           <file> 80</file>
         </tool>
@@ -371,7 +381,7 @@
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 116 79 117</file>
+          <file> 116 79 117 118 157 103 156 170 137 167 150 171 172 147 176 159 149 96 173 162 151 160 153 155 140 141 161 100 152 143 163 144 128 166 102 119 148 154 158 130 174 169 177 146 136 164 121 175 127 104</file>
         </tool>
         <tool>
           <name>BICOMP</name>
@@ -958,10 +968,6 @@
       <name>$PROJ_DIR$\..\stm32f4xx_it.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 46</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 66</file>
         </tool>
@@ -969,11 +975,11 @@
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 101 157 103 156 170 137 167 150 171 172 147 176 159 149 96 173 162 151 160 153 155 140 141 161 100 152 143 163 144 128 166 102 119 148 154 158 130 174 169 177 146 136 164 121 175 127 142 168</file>
+          <file> 101 157 103 156 170 137 167 150 171 172 147 176 159 149 96 173 162 151 160 153 155 140 141 161 100 152 143 163 144 128 166 102 119 148 154 158 130 174 169 177 146 136 164 121 175 127 142 168 104 138 105 117 118 113 135</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 157 128 127 140 174 176 96 173 171 159 152 148 136 142 170 167 147 150 137 149 153 161 163 102 158 177 121 168 101 151 103 162 156 172 160 155 141 100 143 144 166 119 154 130 169 146 164 175</file>
+          <file> 170 156 164 118 143 157 142 103 172 160 154 117 138 135 159 141 166 169 101 104 105 113 151 162 137 155 100 144 119 130 146 175 176 96 173 167 147 150 171 149 153 140 161 152 163 128 102 148 158 174 177 136 121 127 168</file>
         </tool>
       </inputs>
     </file>
@@ -1024,14 +1030,33 @@
       </inputs>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Output\Output\Exe\darkholme.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 185</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 187 48 52 53 86 49 40 93 65 91 55 87 78 67 51 122 68 45 108 54 57 43 46 88 95 72 85 112 74 62 39 50 63 61 37 44 56 94 183 182 186 184</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 111</file>
+          <file> 111 185</file>
         </tool>
       </outputs>
     </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
   </configuration>
 </project>
 
