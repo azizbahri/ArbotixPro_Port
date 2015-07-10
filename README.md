@@ -7,3 +7,4 @@ TODO:
 Date:10/07/2015
 Auth:Aziz
 Description:	ADC initialization must be remade, and also I2C. plus test every peripherals and pins. also need to re assign all the pins.
+				void Gyro_Configuration(void) must be rewrote also

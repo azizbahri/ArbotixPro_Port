@@ -244,41 +244,41 @@ s16 getACC_Z_raw(void)
 void Gyro_Configuration(void)
 {
 
-
-	// write 0x20FF
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	GPIO_ResetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
-
-	SPI_I2S_SendData(SPI2,0x20);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	SPI_I2S_SendData(SPI2,0xFF);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	GPIO_SetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
-
-
-	//write 0x2310
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	GPIO_ResetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
-
-	SPI_I2S_SendData(SPI2,0x23);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	SPI_I2S_SendData(SPI2,0x00);	//set to 0x00 as per Nimbro-OP // WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	GPIO_SetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
-
-	Clear_SPI_Data();
+//
+//	// write 0x20FF
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	GPIO_ResetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
+//
+//	SPI_I2S_SendData(SPI2,0x20);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	SPI_I2S_SendData(SPI2,0xFF);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	GPIO_SetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
+//
+//
+//	//write 0x2310
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	GPIO_ResetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
+//
+//	SPI_I2S_SendData(SPI2,0x23);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	SPI_I2S_SendData(SPI2,0x00);	//set to 0x00 as per Nimbro-OP // WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	GPIO_SetBits(PORT_SIG_GYRO_CS,PIN_SIG_GYRO_CS);
+//
+//	Clear_SPI_Data();
 
 }
 
@@ -286,42 +286,42 @@ void Gyro_Configuration(void)
 void ACC_Configuration(void)
 {
 
-	// write 0x202F
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	GPIO_ResetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
-
-	SPI_I2S_SendData(SPI2,0x20);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	SPI_I2S_SendData(SPI2,0x3F);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	GPIO_SetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
-
-
-
-
-	//write 0x2310
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	GPIO_ResetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
-
-	SPI_I2S_SendData(SPI2,0x23);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	SPI_I2S_SendData(SPI2,0x10);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
-
-	GPIO_SetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
-
-	Clear_SPI_Data();
+//	// write 0x202F
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	GPIO_ResetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
+//
+//	SPI_I2S_SendData(SPI2,0x20);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	SPI_I2S_SendData(SPI2,0x3F);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	GPIO_SetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
+//
+//
+//
+//
+//	//write 0x2310
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	GPIO_ResetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
+//
+//	SPI_I2S_SendData(SPI2,0x23);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	SPI_I2S_SendData(SPI2,0x10);	// WRITE 0XFF TO CTRL_REG1(0X20). OUTPUT DATA RATE 800HZ, POWER : NORMAL, XYZ ENABLE.
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+//	while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+//	Push_SPI_Data( SPI_I2S_ReceiveData(SPI2) );
+//
+//	GPIO_SetBits(PORT_SIG_ACC_CS,PIN_SIG_ACC_CS);
+//
+//	Clear_SPI_Data();
 
 
 }
