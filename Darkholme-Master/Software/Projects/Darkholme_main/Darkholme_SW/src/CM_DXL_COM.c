@@ -984,27 +984,28 @@ void ProcessAfterWriting(void)
 		break;
 
 		case	P_BUZZER_DATA0:
-
-			setBuzzerPlayLength(GB_BUZZER_DATA1);
-
-			if( getBuzzerState() == 0 )
-			{
-				setBuzzerData(GB_BUZZER_DATA0);
-				PlayBuzzer();
-			}
-			else
-			if( GB_BUZZER_DATA1 == 0xFE )
-			{
-				setBuzzerData(GB_BUZZER_DATA0);
-				PlayBuzzer();
-			}
+//no buzzer in darkholme
+//			setBuzzerPlayLength(GB_BUZZER_DATA1);
+//
+//			if( getBuzzerState() == 0 )
+//			{
+//				setBuzzerData(GB_BUZZER_DATA0);
+//				PlayBuzzer();
+//			}
+//			else
+//			if( GB_BUZZER_DATA1 == 0xFE )
+//			{
+//				setBuzzerData(GB_BUZZER_DATA0);
+//				PlayBuzzer();
+//			}
 		break;
 
 		case	P_BUZZER_DATA1:
-			if( GB_BUZZER_DATA1 == 0x00 )
-			{
-				setBuzzerOff();
-			}
+                  //no buzzer in darkholme
+//			if( GB_BUZZER_DATA1 == 0x00 )
+//			{
+//				setBuzzerOff();
+//			}
 		break;
 
 		case	P_TX_REMOCON_DATA_L:
