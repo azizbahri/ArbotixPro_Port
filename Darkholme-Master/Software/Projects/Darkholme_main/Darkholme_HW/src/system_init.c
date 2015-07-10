@@ -232,11 +232,12 @@ void Timer_Configuration(void)
 
 void SysTick_Configuration(void)
 {
-  /* SysTick end of count event each 1ms with input clock equal to 9MHz (HCLK/8, default) */
-  SysTick_SetReload(9000);
-  
-  /* Enable SysTick interrupt */
-  SysTick_ITConfig(ENABLE);
+  //TODO: fix these 
+//  /* SysTick end of count event each 1ms with input clock equal to 9MHz (HCLK/8, default) */
+//  SysTick_SetReload(9000);
+//  
+//  /* Enable SysTick interrupt */
+//  SysTick_ITConfig(ENABLE);
 }
 
 
@@ -510,7 +511,7 @@ void GPIO_Configuration(void)
   GPIO_InitTypeDef GPIO_InitStructure;
   GPIO_StructInit(&GPIO_InitStructure);
   
-  //DARKHOLME TODO: change the port based configuration to pin based configuration, this makes more sense in therms of portability
+  
   
   
   /*-------- Configuring User GPIO pins --------*/
