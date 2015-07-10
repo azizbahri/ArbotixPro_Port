@@ -224,7 +224,7 @@ void Timer_Configuration(void);
 void SysTick_Configuration(void);
 void EXTI_Configuration(void);
 void System_Configuration(void);
-
+void AHB1Periph_GPIOall(void);
 void SPI_Configuration(void);
 void Buzzer_Configuration(void);
 void vGPIO_Configure(GPIO_TypeDef* GPIOx,

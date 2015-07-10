@@ -68,7 +68,7 @@ void System_Configuration(void)
   
   __disable_interrupt();
   /* System Clocks Configuration */
-  //	RCC_Configuration();            //RCC configuration is made in system_stm32f4xx.c
+  	//RCC_Configuration();            //RCC configuration is made in system_stm32f4xx.c
   
   /* NVIC configuration */
   NVIC_Configuration();
@@ -497,8 +497,26 @@ void SPI_Configuration(void)
   
   
 }
-
-
+/*******************************************************************************
+* Function Name  : AHB1Periph_GPIOall
+* Description    : Peripheral clock enable
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void AHB1Periph_GPIOall(void){
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOH, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOI, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOJ, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOK, ENABLE);
+}
 
 /*******************************************************************************
 * Function Name  : GPIO_Configuration
@@ -513,7 +531,8 @@ void GPIO_Configuration(void)
   GPIO_InitTypeDef GPIO_InitStructure;
   GPIO_StructInit(&GPIO_InitStructure);
   
-  
+  //enable all peripheral clocks
+  AHB1Periph_GPIOall();
   
   
   /*-------- Configuring User GPIO pins --------*/
