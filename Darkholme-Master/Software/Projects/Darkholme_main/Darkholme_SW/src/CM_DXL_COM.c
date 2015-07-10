@@ -261,7 +261,7 @@ byte ROM_INITIAL_DATA[]={ 0, 0x73 ,PROGRAM_VERSION, DEFAULT_ID, DEFAULT_BAUD_RAT
 //	<Macro Definition>
 /////////////////////////////////////////////////////////////////////////////
 
-#define SYSTEM_RESET NVIC_GenerateSystemReset()
+#define SYSTEM_RESET NVIC_SystemReset()
 
 #define TxD8 TxDByte
 #define RxD8 RxDByte
