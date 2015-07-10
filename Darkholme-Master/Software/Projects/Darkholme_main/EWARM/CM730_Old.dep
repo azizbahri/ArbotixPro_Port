@@ -181,6 +181,7 @@
       <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Obj\misc.o</file>
       <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Obj\stm32f10x_bkp.pbi</file>
       <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Obj\stm32f10x_can.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Obj\CM730_Old.pbd</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_fsmc.c</name>

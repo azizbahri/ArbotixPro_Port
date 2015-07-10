@@ -15,7 +15,7 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 
-
+#define USART_BUFFER_SIZE	0x3FF
 //when changing peripherals, make sure to change the corrosponding AFs
 ///////////////////UART\//////////////////////////////////////////////////////////
 #define DXL_USART       USART1
