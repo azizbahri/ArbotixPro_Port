@@ -338,7 +338,7 @@ void mDelay(u32 nTime)
   SysTick_Config(SystemCoreClock/1000);
 //	  /* Enable the SysTick Counter */
 //	  SysTick_CounterCmd(SysTick_Counter_Enable);
-//            SysTick_Config(SystemCoreClock/1000);
+  SysTick_Config(SystemCoreClock/1000);
 	  gwTimingDelay = nTime;
 //
 	  while(gwTimingDelay != 0);
