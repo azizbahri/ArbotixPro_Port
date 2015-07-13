@@ -10,3 +10,5 @@ Description:	ADC initialization must be remade, and also I2C. plus test every pe
 				void Gyro_Configuration(void) must be rewrote also
 				
 				Check all interrupts
+				
+				Timer init must be adjusted for new input clock

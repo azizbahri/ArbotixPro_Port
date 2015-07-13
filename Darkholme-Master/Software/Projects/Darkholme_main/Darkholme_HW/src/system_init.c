@@ -68,7 +68,7 @@ void System_Configuration(void)
   
   __disable_interrupt();
   /* System Clocks Configuration */
-  //RCC_Configuration();            //RCC configuration is made in system_stm32f4xx.c
+  RCC_Configuration();            //RCC configuration is made in system_stm32f4xx.c
   
   /* NVIC configuration */
   NVIC_Configuration();
@@ -252,8 +252,8 @@ void SysTick_Configuration(void)
 * Output         : None
 * Return         : None
 *******************************************************************************/
-//void RCC_Configuration(void)
-//{
+void RCC_Configuration(void)
+{
 //	ErrorStatus HSEStartUpStatus;
 //	/* RCC system reset(for debug purpose) */
 //	RCC_DeInit();
@@ -302,19 +302,21 @@ void SysTick_Configuration(void)
 //	} 
 // 
 //	/* Enable peripheral clocks --------------------------------------------------*/
-//
-//	/* Enable USART5, GPIOA,and AFIO clocks */
-//	/* Enable USART5, GPIOA, GPIOB, and AFIO clocks */
-//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 |
-//							RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
-//							RCC_APB2Periph_ADC1 | RCC_APB2Periph_ADC2 | RCC_APB2Periph_AFIO, ENABLE);
-//
-//	RCC_APB1PeriphClockCmd ( RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3 | RCC_APB1Periph_TIM4 | RCC_APB1Periph_TIM5 |
-//							 RCC_APB1Periph_USART3 |  RCC_APB1Periph_UART5 | RCC_APB1Periph_SPI2|
-//							 RCC_APB1Periph_BKP | RCC_APB1Periph_PWR, ENABLE);
-//
-//	PWR_BackupAccessCmd(ENABLE);
-//}
+//  //enable all GPIO peripheral clocks
+  AHB1Periph_GPIOall();
+	/* Enable USART5, GPIOA,and AFIO clocks */
+	/* Enable USART5, GPIOA, GPIOB, and AFIO clocks */
+  
+ 
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 |
+							RCC_APB2Periph_ADC1 | RCC_APB2Periph_ADC2 | RCC_APB2Periph_AFIO, ENABLE);
+
+	RCC_APB1PeriphClockCmd ( RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3 | RCC_APB1Periph_TIM4 | RCC_APB1Periph_TIM5 |
+							 RCC_APB1Periph_USART3 |  RCC_APB1Periph_UART5 | RCC_APB1Periph_SPI2|
+							 RCC_APB1Periph_BKP | RCC_APB1Periph_PWR, ENABLE);
+
+	PWR_BackupAccessCmd(ENABLE);
+}
 
 
 
@@ -408,8 +410,8 @@ void ADC_Configuration(void)
   ADC_StructInit(&ADC_InitStructure);
   
   //Clock configuration
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1,ENABLE);//The ADC1 is connected the APB2 peripheral bus thus we will use its clock source
-   RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC2,ENABLE);
+ // RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1,ENABLE);//The ADC1 is connected the APB2 peripheral bus thus we will use its clock source
+ //  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC2,ENABLE);
   /* ADC1 configuration ------------------------------------------------------*/
    ADC_DeInit();
  ADC_DeInit();
@@ -522,8 +524,7 @@ void GPIO_Configuration(void)
   GPIO_InitTypeDef GPIO_InitStructure;
   GPIO_StructInit(&GPIO_InitStructure);
   
-  //enable all peripheral clocks
-  AHB1Periph_GPIOall();
+
   
   
   /*-------- Configuring User GPIO pins --------*/

@@ -182,16 +182,16 @@ int main(void)
 */
 
         
-        //Darkholm firmware test cases
-        //Test GPIO
-        Test_gpio();
-        //test ADC
-        Test_ADC();
-        //Test UART
-        Test_UART();
-        //Test SPI
-        Test_SPI();
-        
+//        //Darkholm firmware test cases
+//        //Test GPIO
+//        Test_gpio();
+//        //test ADC
+//        Test_ADC();
+//        //Test UART
+//        Test_UART();
+//        //Test SPI
+//        Test_SPI();
+//        
 	Process();
 
         
