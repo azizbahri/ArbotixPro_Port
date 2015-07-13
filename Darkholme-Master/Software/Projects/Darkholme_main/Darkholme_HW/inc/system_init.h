@@ -16,6 +16,10 @@
 /* Exported constants --------------------------------------------------------*/
 
 #define USART_BUFFER_SIZE	0x3FF
+
+///////////////////ADC Channels//////////////////////////////////////////////////////////
+#define ADC1_Channel_X  ADC_Channel_10
+#define ADC2_Channel_X  ADC_Channel_4
 //when changing peripherals, make sure to change the corrosponding AFs
 ///////////////////UART\//////////////////////////////////////////////////////////
 #define DXL_USART       USART1
