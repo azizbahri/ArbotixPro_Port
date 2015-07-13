@@ -33,6 +33,13 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
+void Test_gpio();
+//test ADC
+void Test_ADC();
+//Test UART
+void Test_UART();
+//Test SPI
+void Test_SPI();
 /* Private functions ---------------------------------------------------------*/
 
 
@@ -174,9 +181,36 @@ int main(void)
 
 */
 
+        
+        //Darkholm firmware test cases
+        //Test GPIO
+        Test_gpio();
+        //test ADC
+        Test_ADC();
+        //Test UART
+        Test_UART();
+        //Test SPI
+        Test_SPI();
+        
 	Process();
 
+        
 	while(1);
 
 }
 
+
+void Test_gpio(){
+}
+//test ADC
+void Test_ADC(){
+  
+}
+//Test UART
+void Test_UART(){
+  
+}
+//Test SPI
+void Test_SPI(){
+  
+}

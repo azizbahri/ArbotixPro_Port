@@ -402,62 +402,65 @@ u32 USART_GetBaudrate(u8 PORT)
 
 void ADC_Configuration(void)
 {
-  //TODO: uncomment and fix errors
-//  ADC_InitTypeDef ADC_InitStructure;
-//  
-//  ADC_StructInit(&ADC_InitStructure);
-//  
-//  /* ADC1 configuration ------------------------------------------------------*/
-//  ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-//  ADC_InitStructure.ADC_ScanConvMode = DISABLE;
-//  ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-//  ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-//  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-//  ADC_InitStructure.ADC_NbrOfChannel = 1;
-//  
-//  ADC_Init(ADC1, &ADC_InitStructure);
-//  
-//  ADC_Init(ADC2, &ADC_InitStructure);
-//  
-//  /* ADC1 regular channels configuration */ 
-//  ADC_RegularChannelConfig(ADC1, ADC_Channel_10, 1 , ADC_SampleTime_239Cycles5);
-//  ADC_ITConfig(ADC1, ADC_IT_EOC, DISABLE);
-//  
-//  /* ADC2 regular channels configuration */
-//  ADC_RegularChannelConfig(ADC2, ADC_Channel_4, 1, ADC_SampleTime_239Cycles5);
-//  ADC_ITConfig(ADC2, ADC_IT_EOC, DISABLE);
-//  
-//  /* Enable ADC1 DMA */
-//  //ADC_DMACmd(ADC1, ENABLE);
-//  
-//  /* Enable ADC1,2 */
-//  ADC_Cmd(ADC1, ENABLE);
-//  ADC_Cmd(ADC2, ENABLE);
-//  
-//  
-//  /* Enable ADC1,2 reset calibaration register */
-//  /* Check the end of ADC1,2 reset calibration register */
-//  ADC_ResetCalibration(ADC1);
-//  while(ADC_GetResetCalibrationStatus(ADC1));
-//  
-//  
-//  ADC_ResetCalibration(ADC2);
-//  while(ADC_GetResetCalibrationStatus(ADC2));
-//  
-//  
-//  
-//  /* Start ADC1,2 calibaration */
-//  /* Check the end of ADC1,2 calibration */
-//  ADC_StartCalibration(ADC1);
-//  while(ADC_GetCalibrationStatus(ADC1));
-//  
-//  ADC_StartCalibration(ADC2);
-//  while(ADC_GetCalibrationStatus(ADC2));
-//  
-//  
-//  /* Start ADC2 Software Conversion */
-//  ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-//  ADC_SoftwareStartConvCmd(ADC2, ENABLE);
+
+  ADC_InitTypeDef ADC_InitStructure;
+  
+  ADC_StructInit(&ADC_InitStructure);
+  
+  //Clock configuration
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1,ENABLE);//The ADC1 is connected the APB2 peripheral bus thus we will use its clock source
+  
+  /* ADC1 configuration ------------------------------------------------------*/
+  ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
+  ADC_InitStructure.ADC_ScanConvMode = DISABLE;
+  ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
+  ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
+  ADC_InitStructure.ADC_NbrOfChannel = 1;
+  
+  ADC_Init(ADC1, &ADC_InitStructure);
+  
+  ADC_Init(ADC2, &ADC_InitStructure);
+  
+  /* ADC1 regular channels configuration */ 
+  ADC_RegularChannelConfig(ADC1, ADC_Channel_10, 1 , ADC_SampleTime_239Cycles5);
+  ADC_ITConfig(ADC1, ADC_IT_EOC, DISABLE);
+  
+  /* ADC2 regular channels configuration */
+  ADC_RegularChannelConfig(ADC2, ADC_Channel_4, 1, ADC_SampleTime_239Cycles5);
+  ADC_ITConfig(ADC2, ADC_IT_EOC, DISABLE);
+  
+  /* Enable ADC1 DMA */
+  //ADC_DMACmd(ADC1, ENABLE);
+  
+  /* Enable ADC1,2 */
+  ADC_Cmd(ADC1, ENABLE);
+  ADC_Cmd(ADC2, ENABLE);
+  
+  
+  /* Enable ADC1,2 reset calibaration register */
+  /* Check the end of ADC1,2 reset calibration register */
+  ADC_ResetCalibration(ADC1);
+  while(ADC_GetResetCalibrationStatus(ADC1));
+  
+  
+  ADC_ResetCalibration(ADC2);
+  while(ADC_GetResetCalibrationStatus(ADC2));
+  
+  
+  
+  /* Start ADC1,2 calibaration */
+  /* Check the end of ADC1,2 calibration */
+  ADC_StartCalibration(ADC1);
+  while(ADC_GetCalibrationStatus(ADC1));
+  
+  ADC_StartCalibration(ADC2);
+  while(ADC_GetCalibrationStatus(ADC2));
+  
+  
+  /* Start ADC2 Software Conversion */
+  ADC_SoftwareStartConvCmd(ADC1, ENABLE);
+  ADC_SoftwareStartConvCmd(ADC2, ENABLE);
 }
 
 
