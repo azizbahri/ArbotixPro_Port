@@ -233,6 +233,11 @@ void TIM2_IRQHandler(void)
 {
   static byte b1Sec=0;
   
+  //checks for capture compare flag,
+  //clears it
+  //read adc
+  //resets counter back to 0
+  //resets cc value
   if (TIM_GetITStatus(TIM2, TIM_IT_CC4) != RESET) // 120us, 8000Hz
   {
     TIM_ClearITPendingBit(TIM2, TIM_IT_CC4);

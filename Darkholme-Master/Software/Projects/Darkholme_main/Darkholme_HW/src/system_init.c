@@ -432,7 +432,7 @@ void ADC_Configuration(void)
   ADC_ITConfig(ADC1, ADC_IT_EOC, DISABLE);
   
   /* ADC2 regular channels configuration */
-  ADC_RegularChannelConfig(ADC2, ADC_Channel_4, 1, ADC_SampleTime_480Cycles);
+  ADC_RegularChannelConfig(ADC2, ADC2_Channel_X, 1, ADC_SampleTime_480Cycles);
   ADC_ITConfig(ADC2, ADC_IT_EOC, DISABLE);
   
   /* Enable ADC1 DMA */
