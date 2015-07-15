@@ -19,7 +19,7 @@ int zgb_hal_open( int devIndex, int baudrate )
 	//unsigned long int baud = 0;//(unsigned long int)baudrate;
 	//int baud = (int)baudrate;
 	//TxDHex32(baudrate);
-	USART_Configuration(USART_ZIGBEE,57600);
+	USART_Configuration(USART_ZIGBEE,baudrate);
 
 	return 1;
 

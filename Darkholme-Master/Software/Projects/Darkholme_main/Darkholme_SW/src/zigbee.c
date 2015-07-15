@@ -18,10 +18,11 @@ unsigned char gbRcvPacketNum;
 unsigned short gwRcvData;
 unsigned char gbRcvFlag;
 unsigned short gwMyZigbeeID;
+unsigned int Baudrate_XBEE =9600; //57600;
 
 int zgb_initialize( int devIndex )
 {
-	if( zgb_hal_open( devIndex, 57600 ) == 0) // Always fixed baudrate
+	if( zgb_hal_open( devIndex, Baudrate_XBEE ) == 0) // Always fixed baudrate
 		return 0;
 
 	gbRcvFlag = 0;

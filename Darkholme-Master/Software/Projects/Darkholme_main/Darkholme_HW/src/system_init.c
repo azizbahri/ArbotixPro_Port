@@ -37,10 +37,10 @@ vu16 CCR2_Val = 778; 		// 7.81ms
 vu16 CCR3_Val = 12400;    	// 125ms
 vu16 CCR4_Val = 12;    		// 12us
 
-u32 Baudrate_DXL = 	1000000;
-u32 Baudrate_ZIGBEE = 57600;
+u32 Baudrate_DXL = 9600;//	1000000;
+u32 Baudrate_ZIGBEE = 9600;//57600;
 //u32 Baudrate_PC = 57600;
-u32 Baudrate_PC = 1000000;
+u32 Baudrate_PC = 9600;//1000000;
 
 //u8 SPI_Data_Transmit_Complete=FALSE;
 
@@ -85,8 +85,8 @@ void System_Configuration(void)
   /* USART Configuration */
   USART_Configuration(USART_DXL,Baudrate_DXL);
   //dxl_initialize(USART_DXL,Baudrate_DXL);
-  zgb_initialize(0);
-  //USART_Configuration(USART_ZIGBEE,Baudrate_ZIGBEE);
+  //zgb_initialize(0);
+  USART_Configuration(USART_ZIGBEE,Baudrate_ZIGBEE);
   
   //USART_Configuration(USART_PC,1000000);
   //USART_Configuration(USART_PC,3000000);
@@ -254,68 +254,88 @@ void SysTick_Configuration(void)
 *******************************************************************************/
 void RCC_Configuration(void)
 {
-//	ErrorStatus HSEStartUpStatus;
-//	/* RCC system reset(for debug purpose) */
-//	RCC_DeInit();
-//
-//	/* Enable HSE */
-//	RCC_HSEConfig(RCC_HSE_ON);
-//
-//	/* Wait till HSE is ready */
-//	HSEStartUpStatus = RCC_WaitForHSEStartUp();
-//
-//	if(HSEStartUpStatus == SUCCESS)
-//	{
-//		/* Enable Prefetch Buffer */
-//		FLASH_PrefetchBufferCmd(ENABLE);   //the argument for this has changed
-//
-//		/* Flash 2 wait state */
-//		FLASH_SetLatency(FLASH_Latency_2);
-//
-//		/* HCLK = SYSCLK */
-//		RCC_HCLKConfig(RCC_SYSCLK_Div1); 
-//
-//		/* PCLK2 = HCLK */
-//		RCC_PCLK2Config(RCC_HCLK_Div1); 
-//
-//		/* PCLK1 = HCLK/2 */
-//		RCC_PCLK1Config(RCC_HCLK_Div2);
-//
-//		/* PLLCLK = 8MHz * 9 = 72 MHz */
-//		RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);
-//
-//		/* Enable PLL */ 
-//		RCC_PLLCmd(ENABLE);
-//
-//		/* Wait till PLL is ready */
-//		while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
-//		{
-//		}
-//
-//		/* Select PLL as system clock source */
-//		RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
-//
-//		/* Wait till PLL is used as system clock source */
-//		while(RCC_GetSYSCLKSource() != 0x08)
-//		{
-//		}
-//	} 
-// 
-//	/* Enable peripheral clocks --------------------------------------------------*/
-//  //enable all GPIO peripheral clocks
+  //	ErrorStatus HSEStartUpStatus;
+  //	/* RCC system reset(for debug purpose) */
+  //	RCC_DeInit();
+  //
+  //	/* Enable HSE */
+  //	RCC_HSEConfig(RCC_HSE_ON);
+  //
+  //	/* Wait till HSE is ready */
+  //	HSEStartUpStatus = RCC_WaitForHSEStartUp();
+  //
+  //	if(HSEStartUpStatus == SUCCESS)
+  //	{
+  //		/* Enable Prefetch Buffer */
+  //		FLASH_PrefetchBufferCmd(ENABLE);   //the argument for this has changed
+  //
+  //		/* Flash 2 wait state */
+  //		FLASH_SetLatency(FLASH_Latency_2);
+  //
+  //		/* HCLK = SYSCLK */
+  //		RCC_HCLKConfig(RCC_SYSCLK_Div1); 
+  //
+  //		/* PCLK2 = HCLK */
+  //		RCC_PCLK2Config(RCC_HCLK_Div1); 
+  //
+  //		/* PCLK1 = HCLK/2 */
+  //		RCC_PCLK1Config(RCC_HCLK_Div2);
+  //
+  //		/* PLLCLK = 8MHz * 9 = 72 MHz */
+  //		RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);
+  //
+  //		/* Enable PLL */ 
+  //		RCC_PLLCmd(ENABLE);
+  //
+  //		/* Wait till PLL is ready */
+  //		while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+  //		{
+  //		}
+  //
+  //		/* Select PLL as system clock source */
+  //		RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
+  //
+  //		/* Wait till PLL is used as system clock source */
+  //		while(RCC_GetSYSCLKSource() != 0x08)
+  //		{
+  //		}
+  //	} 
+  // 
+  //	/* Enable peripheral clocks --------------------------------------------------*/
+  //  //enable all GPIO peripheral clocks
   AHB1Periph_GPIOall();
-	/* Enable USART5, GPIOA,and AFIO clocks */
-	/* Enable USART5, GPIOA, GPIOB, and AFIO clocks */
+  /* Enable USART5, GPIOA,and AFIO clocks */
+  /* Enable USART5, GPIOA, GPIOB, and AFIO clocks */
   
- 
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 |
-							RCC_APB2Periph_ADC1 | RCC_APB2Periph_ADC2 | RCC_APB2Periph_AFIO, ENABLE);
-
-	RCC_APB1PeriphClockCmd ( RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3 | RCC_APB1Periph_TIM4 | RCC_APB1Periph_TIM5 |
-							 RCC_APB1Periph_USART3 |  RCC_APB1Periph_UART5 | RCC_APB1Periph_SPI2|
-							 RCC_APB1Periph_BKP | RCC_APB1Periph_PWR, ENABLE);
-
-	PWR_BackupAccessCmd(ENABLE);
+  //Usart 1
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
+  //TIM1
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
+  //TM8
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM8,ENABLE);
+  //ADC1
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1,ENABLE);
+  //ADC2
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC2,ENABLE);
+  //TIM2
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+  //TIM3
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
+  //TIM4
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
+  //TIM5
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE);
+  //USART3
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3,ENABLE);
+  //UART5
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART5,ENABLE);
+  //SPI2
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2,ENABLE);
+  //PWR
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR,ENABLE);
+  
+  
+  PWR_BackupAccessCmd(ENABLE);
 }
 
 
@@ -354,7 +374,7 @@ void USART_Configuration(u8 PORT, u32 baudrate)
   {
     Baudrate_ZIGBEE = baudrate;
     
-    USART_DeInit(ZIGBEE_USART);
+    //USART_DeInit(ZIGBEE_USART);
     /* Configure the UART5 */
     USART_Init(ZIGBEE_USART, &USART_InitStructure);
     
@@ -410,18 +430,18 @@ void ADC_Configuration(void)
   ADC_StructInit(&ADC_InitStructure);
   
   //Clock configuration
- // RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1,ENABLE);//The ADC1 is connected the APB2 peripheral bus thus we will use its clock source
- //  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC2,ENABLE);
+  // RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1,ENABLE);//The ADC1 is connected the APB2 peripheral bus thus we will use its clock source
+  //  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC2,ENABLE);
   /* ADC1 configuration ------------------------------------------------------*/
-   ADC_DeInit();
- ADC_DeInit();
- ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;//data converted will be shifted to right
- ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;//Input voltage is converted into a 12bit number giving a maximum value of 4096
- ADC_InitStructure.ADC_ContinuousConvMode = ENABLE; //the conversion is continuous, the input data is converted more than once
- ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;// conversion is synchronous with TIM1 and CC1 (actually I'm not sure about this one :/)
- ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//no trigger for conversion
- ADC_InitStructure.ADC_NbrOfConversion = 1;//I think this one is clear :p
- ADC_InitStructure.ADC_ScanConvMode = DISABLE;//The scan is configured in one channel
+  ADC_DeInit();
+  ADC_DeInit();
+  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;//data converted will be shifted to right
+  ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;//Input voltage is converted into a 12bit number giving a maximum value of 4096
+  ADC_InitStructure.ADC_ContinuousConvMode = ENABLE; //the conversion is continuous, the input data is converted more than once
+  ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;// conversion is synchronous with TIM1 and CC1 (actually I'm not sure about this one :/)
+  ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//no trigger for conversion
+  ADC_InitStructure.ADC_NbrOfConversion = 1;//I think this one is clear :p
+  ADC_InitStructure.ADC_ScanConvMode = DISABLE;//The scan is configured in one channel
   
   ADC_Init(ADC1, &ADC_InitStructure);
   
@@ -521,10 +541,10 @@ void AHB1Periph_GPIOall(void){
 void GPIO_Configuration(void)
 {
   
-  GPIO_InitTypeDef GPIO_InitStructure;
-  GPIO_StructInit(&GPIO_InitStructure);
-  
+  GPIO_InitTypeDef GPIO_InitStruct;
+  GPIO_StructInit(&GPIO_InitStruct);
 
+  
   
   
   /*-------- Configuring User GPIO pins --------*/
@@ -538,24 +558,99 @@ void GPIO_Configuration(void)
   /*-------- Configuring PIN_CPU_RXD and PIN_CPU_TXD --------*/
   
   //PIN_CPU_RXD
-  vGPIO_Configure(PORT_CPU_RXD,
-                  PIN_CPU_RXD,
-                  GPIO_Mode_AF,
-                  GPIO_Speed_50MHz,
-                  GPIO_OType_PP,
-                  GPIO_PuPd_UP);
   
-  GPIO_PinAFConfig(PORT_CPU_RXD, PIN_CPU_RXD, CPU_USART_AF); 
+  GPIO_InitStruct.GPIO_Pin = PIN_CPU_RXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  
+  GPIO_Init(PORT_CPU_RXD, &GPIO_InitStruct);
+  GPIO_PinAFConfig(PORT_CPU_RXD, GPIO_PinSource11, CPU_USART_AF); 
   
   //PIN_CPU_TXD
-  vGPIO_Configure(PORT_CPU_TXD,
-                  PIN_CPU_TXD,
-                  GPIO_Mode_AF,
+  
+  GPIO_InitStruct.GPIO_Pin = PIN_CPU_TXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_Init(PORT_CPU_TXD, &GPIO_InitStruct);
+  
+  GPIO_PinAFConfig(PORT_CPU_TXD, GPIO_PinSource10, CPU_USART_AF);
+  
+  /*-------- Configuring DXL uart pins --------*/
+  GPIO_InitStruct.GPIO_Pin = PIN_DXL_RXD | PIN_DXL_TXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_Init(PORT_DXL_RXD, &GPIO_InitStruct);
+  GPIO_PinAFConfig(PORT_DXL_RXD, GPIO_PinSource6, DXL_USART_AF); //
+  GPIO_PinAFConfig(PORT_DXL_RXD, GPIO_PinSource7, DXL_USART_AF);
+  
+  //PIN_ENABLE_TXD
+  vGPIO_Configure(PORT_ENABLE_TXD ,
+                  PIN_ENABLE_TXD ,
+                  GPIO_Mode_OUT,
                   GPIO_Speed_50MHz,
                   GPIO_OType_PP,
                   GPIO_PuPd_UP);
   
-  GPIO_PinAFConfig(PORT_CPU_TXD, PIN_CPU_TXD, CPU_USART_AF);
+    
+  /*-------- Configuring PC uart pins--------*/
+  
+  //PIN_PC_RXD
+  GPIO_InitStruct.GPIO_Pin = PIN_PC_RXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_Init(PORT_PC_RXD, &GPIO_InitStruct);
+ 
+  GPIO_PinAFConfig(PORT_PC_RXD, GPIO_PinSource11, PC_USART_AF);
+  
+  //PIN_PC_TXD
+  GPIO_InitStruct.GPIO_Pin = PIN_PC_TXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_Init(PORT_PC_TXD, &GPIO_InitStruct);
+  
+  GPIO_PinAFConfig(PORT_PC_TXD, GPIO_PinSource10, PC_USART_AF);
+
+  
+    /*-------- Configuring Zigbee pins--------*/
+  //PIN_ENABLE_ZIGBEE
+  vGPIO_Configure(PORT_ENABLE_ZIGBEE ,
+                  PIN_ENABLE_ZIGBEE ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_ZIGBEE_TXD
+  
+  GPIO_InitStruct.GPIO_Pin = PIN_ZIGBEE_TXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  
+  GPIO_Init(PORT_ZIGBEE_TXD, &GPIO_InitStruct);
+  
+  GPIO_PinAFConfig(PORT_ZIGBEE_TXD, GPIO_PinSource12, ZIGBEE_USART_AF);
+  
+  //PIN_ZIGBEE_RXD
+  GPIO_InitStruct.GPIO_Pin = PIN_ZIGBEE_RXD;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  
+  GPIO_Init(PORT_ZIGBEE_RXD, &GPIO_InitStruct);
+  
+  GPIO_PinAFConfig(PORT_ZIGBEE_RXD, GPIO_PinSource12, ZIGBEE_USART_AF);
   
   /*-------- Configuring Analogue pins --------*/
   //PIN_ADC0
@@ -628,258 +723,188 @@ void GPIO_Configuration(void)
                   GPIO_Mode_AIN,
                   GPIO_Speed_50MHz,
                   GPIO_OType_PP,
-                  GPIO_PuPd_NOPULL);;
-                  //PIN_ADC10
-                  vGPIO_Configure(PORT_ADC10 ,
-                                  PIN_ADC10 ,
-                                  GPIO_Mode_AIN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  //PIN_ADC11
-                  vGPIO_Configure(PORT_ADC11 ,
-                                  PIN_ADC11 ,
-                                  GPIO_Mode_AIN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  //PIN_ADC12
-                  vGPIO_Configure(PORT_ADC12 ,
-                                  PIN_ADC12 ,
-                                  GPIO_Mode_AIN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  //PIN_ADC13
-                  vGPIO_Configure(PORT_ADC13 ,
-                                  PIN_ADC13 ,
-                                  GPIO_Mode_AIN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  
-                  //PIN_ADC14
-                  vGPIO_Configure(PORT_ADC14 ,
-                                  PIN_ADC14 ,
-                                  GPIO_Mode_AIN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  
-                  //PIN_ADC15
-                  vGPIO_Configure(PORT_ADC15 ,
-                                  PIN_ADC15 ,
-                                  GPIO_Mode_AIN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  
-                  /*-------- Configuring Switches --------*/
-                  //PIN_SW_MODE
-                  vGPIO_Configure(PORT_SW_MODE ,
-                                  PIN_SW_MODE ,
-                                  GPIO_Mode_IN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);        //not sure up or down
-                  //PIN_SW_START
-                  vGPIO_Configure(PORT_SW_START ,
-                                  PIN_SW_START ,
-                                  GPIO_Mode_IN,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  /*-------- Configuring Enable pins --------*/
-                  //PIN_ENABLE_RXD
-                  vGPIO_Configure(PORT_ENABLE_RXD ,
-                                  PIN_ENABLE_RXD ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  //PIN_ENABLE_DXLPWR
-                  vGPIO_Configure(PORT_ENABLE_DXLPWR ,
-                                  PIN_ENABLE_DXLPWR ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  /*-------- Configuring LED Pins --------*/
-                  
-                  //PIN_LED3
-                  vGPIO_Configure(PORT_LED3 ,
-                                  PIN_LED3 ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);    
-                  //PIN_LED4
-                  vGPIO_Configure(PORT_LED4 ,
-                                  PIN_LED4 ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  //PIN_LED_TX
-                  vGPIO_Configure(PORT_LED_TX ,
-                                  PIN_LED_TX ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  //PIN_LED_RX
-                  vGPIO_Configure(PORT_LED_RX ,
-                                  PIN_LED_RX ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  //PIN_LED2
-                  vGPIO_Configure(PORT_LED2 ,
-                                  PIN_LED2 ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  /*-------- Configuring DXL uart pins --------*/
-                  //PIN_DXL_RXD
-                  vGPIO_Configure(PORT_DXL_RXD ,
-                                  PIN_DXL_RXD ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  GPIO_PinAFConfig(PORT_DXL_RXD, PIN_DXL_RXD, DXL_USART_AF); 
-                  
-                  //PIN_DXL_TXD
-                  vGPIO_Configure(PORT_DXL_RXD ,
-                                  PIN_DXL_RXD ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  GPIO_PinAFConfig(PORT_DXL_TXD, PIN_DXL_TXD, DXL_USART_AF);
-                  
-                  //PIN_ENABLE_TXD
-                  vGPIO_Configure(PORT_ENABLE_TXD ,
-                                  PIN_ENABLE_TXD ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  
-                  
-                  /*-------- Configuring PC uart pins--------*/
-                  
-                  //PIN_PC_RXD
-                  vGPIO_Configure(PORT_PC_RXD ,
-                                  PIN_PC_RXD ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  GPIO_PinAFConfig(PORT_PC_RXD, PIN_PC_RXD, PC_USART_AF);
-                  
-                  //PIN_PC_TXD
-                  vGPIO_Configure(PORT_PC_TXD ,
-                                  PIN_PC_TXD ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  GPIO_PinAFConfig(PORT_PC_TXD, PIN_PC_TXD, PC_USART_AF);
-                  
-                  
-                  /*-------- Configuring SCK, MISO, MOSI --------*/
-                  
-                  //PIN_SIG_SCK
-                  vGPIO_Configure(PORT_SIG_SCK ,
-                                  PIN_SIG_SCK ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  GPIO_PinAFConfig(PORT_SIG_SCK, PIN_SIG_SCK, SPI_AF);
-                  
-                  //PIN_SIG_MOSI
-                  vGPIO_Configure(PORT_SIG_MOSI ,
-                                  PIN_SIG_MOSI ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  GPIO_PinAFConfig(PORT_SIG_MOSI, PIN_SIG_MOSI, SPI_AF);
-                  
-                  //PIN_SIG_MISO
-                  vGPIO_Configure(PORT_SIG_MISO ,
-                                  PIN_SIG_MISO ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_NOPULL);
-                  GPIO_PinAFConfig(PORT_SIG_MISO, PIN_SIG_MISO, SPI_AF);
-                  
-                  
-                  /*-------- Configuring Buzzer Pin --------*/
-                  //PIN_BUZZER
-                  vGPIO_Configure(PORT_BUZZER ,
-                                  PIN_BUZZER ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  
-                  /*-------- Configuring Chip select pins --------*/
-                  
-                  //PIN_SIG_ACC_CS
-                  vGPIO_Configure(PORT_SIG_ACC_CS ,
-                                  PIN_SIG_ACC_CS ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  //PIN_SIG_GYRO_CS
-                  vGPIO_Configure(PORT_SIG_GYRO_CS ,
-                                  PIN_SIG_GYRO_CS ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  
-                  
-                  /*-------- Configuring Zigbee pins--------*/
-                  //PIN_ENABLE_ZIGBEE
-                  vGPIO_Configure(PORT_ENABLE_ZIGBEE ,
-                                  PIN_ENABLE_ZIGBEE ,
-                                  GPIO_Mode_OUT,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  //PIN_ZIGBEE_TXD
-                  vGPIO_Configure(PORT_ZIGBEE_TXD ,
-                                  PIN_ZIGBEE_TXD ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  GPIO_PinAFConfig(PORT_ZIGBEE_TXD, PIN_ZIGBEE_TXD, ZIGBEE_USART_AF);
-                  
-                  //PIN_ZIGBEE_RXD
-                  vGPIO_Configure(PORT_PC_RXD ,
-                                  PIN_PC_RXD ,
-                                  GPIO_Mode_AF,
-                                  GPIO_Speed_50MHz,
-                                  GPIO_OType_PP,
-                                  GPIO_PuPd_UP);
-                  GPIO_PinAFConfig(PORT_PC_RXD, PIN_PC_RXD, ZIGBEE_USART_AF);
-                  
-                  
+                  GPIO_PuPd_NOPULL);
+  //PIN_ADC10
+  vGPIO_Configure(PORT_ADC10 ,
+                  PIN_ADC10 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  //PIN_ADC11
+  vGPIO_Configure(PORT_ADC11 ,
+                  PIN_ADC11 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  //PIN_ADC12
+  vGPIO_Configure(PORT_ADC12 ,
+                  PIN_ADC12 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  //PIN_ADC13
+  vGPIO_Configure(PORT_ADC13 ,
+                  PIN_ADC13 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  
+  //PIN_ADC14
+  vGPIO_Configure(PORT_ADC14 ,
+                  PIN_ADC14 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  
+  //PIN_ADC15
+  vGPIO_Configure(PORT_ADC15 ,
+                  PIN_ADC15 ,
+                  GPIO_Mode_AIN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  
+  /*-------- Configuring Switches --------*/
+  //PIN_SW_MODE
+  vGPIO_Configure(PORT_SW_MODE ,
+                  PIN_SW_MODE ,
+                  GPIO_Mode_IN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);        //not sure up or down
+  //PIN_SW_START
+  vGPIO_Configure(PORT_SW_START ,
+                  PIN_SW_START ,
+                  GPIO_Mode_IN,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  /*-------- Configuring Enable pins --------*/
+  //PIN_ENABLE_RXD
+  vGPIO_Configure(PORT_ENABLE_RXD ,
+                  PIN_ENABLE_RXD ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_ENABLE_DXLPWR
+  vGPIO_Configure(PORT_ENABLE_DXLPWR ,
+                  PIN_ENABLE_DXLPWR ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  /*-------- Configuring LED Pins --------*/
+  
+  //PIN_LED3
+  vGPIO_Configure(PORT_LED3 ,
+                  PIN_LED3 ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);    
+  //PIN_LED4
+  vGPIO_Configure(PORT_LED4 ,
+                  PIN_LED4 ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_LED_TX
+  vGPIO_Configure(PORT_LED_TX ,
+                  PIN_LED_TX ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_LED_RX
+  vGPIO_Configure(PORT_LED_RX ,
+                  PIN_LED_RX ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  //PIN_LED2
+  vGPIO_Configure(PORT_LED2 ,
+                  PIN_LED2 ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+
+
+  
+  
+  /*-------- Configuring SCK, MISO, MOSI --------*/
+  
+  //PIN_SIG_SCK
+  vGPIO_Configure(PORT_SIG_SCK ,
+                  PIN_SIG_SCK ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  GPIO_PinAFConfig(PORT_SIG_SCK, PIN_SIG_SCK, SPI_AF);
+  
+  //PIN_SIG_MOSI
+  vGPIO_Configure(PORT_SIG_MOSI ,
+                  PIN_SIG_MOSI ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  GPIO_PinAFConfig(PORT_SIG_MOSI, PIN_SIG_MOSI, SPI_AF);
+  
+  //PIN_SIG_MISO
+  vGPIO_Configure(PORT_SIG_MISO ,
+                  PIN_SIG_MISO ,
+                  GPIO_Mode_AF,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_NOPULL);
+  GPIO_PinAFConfig(PORT_SIG_MISO, PIN_SIG_MISO, SPI_AF);
+  
+  
+  /*-------- Configuring Buzzer Pin --------*/
+  //PIN_BUZZER
+  vGPIO_Configure(PORT_BUZZER ,
+                  PIN_BUZZER ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  
+  /*-------- Configuring Chip select pins --------*/
+  
+  //PIN_SIG_ACC_CS
+  vGPIO_Configure(PORT_SIG_ACC_CS ,
+                  PIN_SIG_ACC_CS ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  //PIN_SIG_GYRO_CS
+  vGPIO_Configure(PORT_SIG_GYRO_CS ,
+                  PIN_SIG_GYRO_CS ,
+                  GPIO_Mode_OUT,
+                  GPIO_Speed_50MHz,
+                  GPIO_OType_PP,
+                  GPIO_PuPd_UP);
+  
+  
+
+  
+  
 }
 
 /*******************************************************************************

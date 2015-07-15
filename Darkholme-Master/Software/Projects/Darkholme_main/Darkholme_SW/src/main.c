@@ -33,6 +33,8 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
+//test functions
+void SendData(USART_TypeDef* USARTx, volatile char *s);
 void Test_gpio();
 //test ADC
 void Test_ADC();
@@ -188,7 +190,7 @@ int main(void)
 //        //test ADC
 //        Test_ADC();
 //        //Test UART
-//        Test_UART();
+       Test_UART();
 //        //Test SPI
 //        Test_SPI();
 //        
@@ -205,13 +207,27 @@ void Test_gpio(){
 }
 //test ADC
 void Test_ADC(){
-  
+
 }
 //Test UART
 void Test_UART(){
-  
+  SendData(PC_USART, "PC UART");
+  SendData(DXL_USART, "DXL USART, TX_PB6, RX_PB6");
+  SendData(ZIGBEE_USART, "ZIGBEE USART, TX_PC12, RX_PD2");
+  SendData(CPU_USART, "CPU USART");
 }
 //Test SPI
 void Test_SPI(){
   
 }
+//writes out a string to the passed in usart. The string is passed as a pointer
+void SendData(USART_TypeDef* USARTx, volatile char *s){
+
+	while(*s){
+		// wait until data register is empty
+		while( !(USARTx->SR & 0x00000040) );
+		USART_SendData(USARTx, *s);
+		*s++;
+	}
+}
+
