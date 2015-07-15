@@ -434,7 +434,6 @@ void ADC_Configuration(void)
   //  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC2,ENABLE);
   /* ADC1 configuration ------------------------------------------------------*/
   ADC_DeInit();
-  ADC_DeInit();
   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;//data converted will be shifted to right
   ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;//Input voltage is converted into a 12bit number giving a maximum value of 4096
   ADC_InitStructure.ADC_ContinuousConvMode = ENABLE; //the conversion is continuous, the input data is converted more than once
