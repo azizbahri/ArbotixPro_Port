@@ -10,6 +10,10 @@
 #ifndef __SYSTEM_INIT_H
 #define __SYSTEM_INIT_H
 
+
+
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx.h"
 /* Exported types ------------------------------------------------------------*/
@@ -36,7 +40,29 @@
 #define ZIGBEE_USART_AF    GPIO_AF_UART5
 #define CPU_USART_AF       GPIO_AF_UART4  //unused
 #define SPI_AF             GPIO_AF_SPI2     
-///////////////////PORTA//////////////////////////////////////////////////////////
+
+///////////////////UART GPIO//////////////////////////////////////////////////////////
+//CPU Uart
+#define PORT_CPU_TXD			        GPIOC
+#define PORT_CPU_RXD			        GPIOC
+#define PIN_CPU_TXD				GPIO_Pin_10
+#define PIN_CPU_RXD				GPIO_Pin_11
+//Zigbee Uart
+#define PIN_ZIGBEE_RXD			        GPIO_Pin_2
+#define PIN_ZIGBEE_TXD			        GPIO_Pin_12
+#define PORT_ZIGBEE_TXD			        GPIOC
+#define PORT_ZIGBEE_RXD			        GPIOD
+//DXL Uart
+#define PIN_DXL_TXD				GPIO_Pin_6
+#define PIN_DXL_RXD				GPIO_Pin_7
+#define PORT_DXL_TXD			        GPIOB
+#define PORT_DXL_RXD			        GPIOB
+//PC uart
+#define PIN_PC_TXD				GPIO_Pin_10
+#define PIN_PC_RXD				GPIO_Pin_11
+#define PORT_PC_TXD				GPIOB
+#define PORT_PC_RXD				GPIOB
+
 #define PIN_ADC4				GPIO_Pin_0
 #define PIN_ADC5				GPIO_Pin_1
 #define PIN_ADC6				GPIO_Pin_2
@@ -49,8 +75,7 @@
 //#define PIN_LED6_R				GPIO_Pin_8
 #define PIN_PA8					GPIO_Pin_8
 
-#define PIN_CPU_TXD				GPIO_Pin_9
-#define PIN_CPU_RXD				GPIO_Pin_10
+
 
 //#define PIN_LED6_G				GPIO_Pin_11
 #define PIN_SW_MODE				GPIO_Pin_11
@@ -78,8 +103,7 @@
 //#define PORT_LED6_R				GPIOA
 #define PORT_PA8				GPIOA
 
-#define PORT_CPU_TXD			GPIOA
-#define PORT_CPU_RXD			GPIOA
+
 
 //#define PORT_LED6_G				GPIOA
 //#define PORT_LED6_B				GPIOA
@@ -105,12 +129,10 @@
 #define PIN_PB4					GPIO_Pin_4
 
 #define PIN_ENABLE_RXD			GPIO_Pin_5
-#define PIN_DXL_TXD				GPIO_Pin_6
-#define PIN_DXL_RXD				GPIO_Pin_7
+
 #define PIN_ENABLE_DXLPWR		GPIO_Pin_8
 #define PIN_BUZZER				GPIO_Pin_9
-#define PIN_PC_TXD				GPIO_Pin_10
-#define PIN_PC_RXD				GPIO_Pin_11
+
 #define PIN_LED3				GPIO_Pin_12
 #define PIN_SIG_SCK				GPIO_Pin_13
 #define PIN_SIG_MISO			GPIO_Pin_14
@@ -127,12 +149,10 @@
 #define PORT_PB4				GPIOB
 
 #define PORT_ENABLE_RXD			GPIOB
-#define PORT_DXL_TXD			GPIOB
-#define PORT_DXL_RXD			GPIOB
+
 #define PORT_ENABLE_DXLPWR		GPIOB
 #define PORT_BUZZER				GPIOB
-#define PORT_PC_TXD				GPIOB
-#define PORT_PC_RXD				GPIOB
+
 #define PORT_LED3				GPIOB
 #define PORT_SIG_SCK			GPIOB
 #define PORT_SIG_MISO			GPIOB
@@ -161,7 +181,7 @@
 
 #define PIN_SIG_ACC_CS			GPIO_Pin_10
 #define PIN_SIG_GYRO_CS			GPIO_Pin_11
-#define PIN_ZIGBEE_TXD			GPIO_Pin_12
+
 #define PIN_LED_TX				GPIO_Pin_13
 #define PIN_LED_RX				GPIO_Pin_14
 #define PIN_LED2				GPIO_Pin_15
@@ -186,7 +206,7 @@
 
 #define PORT_SIG_ACC_CS			GPIOC
 #define PORT_SIG_GYRO_CS		GPIOC
-#define PORT_ZIGBEE_TXD			GPIOC
+
 #define PORT_LED_TX				GPIOC
 #define PORT_LED_RX				GPIOC
 #define PORT_LED2				GPIOC
@@ -194,8 +214,7 @@
 
 
 ///////////////////PORTD///////////////////////////////////////////////////////
-#define PIN_ZIGBEE_RXD			GPIO_Pin_2
-#define PORT_ZIGBEE_RXD			GPIOD
+
 
 
 /////////////////////////// LED REDEFINE /////////////////////////////////////////
