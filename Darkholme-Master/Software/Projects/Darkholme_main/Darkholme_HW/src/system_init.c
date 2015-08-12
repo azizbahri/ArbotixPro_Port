@@ -37,10 +37,10 @@ vu16 CCR2_Val = 778; 		// 7.81ms
 vu16 CCR3_Val = 12400;    	// 125ms
 vu16 CCR4_Val = 12;    		// 12us
 
-u32 Baudrate_DXL = 9600;//	1000000;
-u32 Baudrate_ZIGBEE = 9600;//57600;
+u32 Baudrate_DXL =1000000;
+u32 Baudrate_ZIGBEE = 57600;
 //u32 Baudrate_PC = 57600;
-u32 Baudrate_PC = 9600;//1000000;
+u32 Baudrate_PC = 1000000;
 
 //u8 SPI_Data_Transmit_Complete=FALSE;
 
@@ -327,6 +327,8 @@ void RCC_Configuration(void)
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE);
   //USART3
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3,ENABLE);
+  //USART3
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART6,ENABLE);
   //UART5
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART5,ENABLE);
   //SPI2

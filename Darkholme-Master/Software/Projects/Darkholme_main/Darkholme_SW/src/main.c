@@ -186,11 +186,11 @@ int main(void)
         
 //        //Darkholm firmware test cases
 //        //Test GPIO
-//        Test_gpio();
+     //   Test_gpio();
 //        //test ADC
 //        Test_ADC();
 //        //Test UART
-       Test_UART();
+      // Test_UART();
 //        //Test SPI
 //        Test_SPI();
 //        
@@ -203,7 +203,7 @@ int main(void)
 
 
 void Test_gpio(){
-  
+  GPIO_SetBits(PORT_ENABLE_DXLPWR, PIN_ENABLE_DXLPWR)  ;
 }
 //test ADC
 void Test_ADC(){

@@ -250,7 +250,31 @@
 
 //byte ROM_INITIAL_DATA[]={ 28, 0 ,PROGRAM_VERSION, DEFAULT_ID, DEFAULT_BAUD_RATE, 0, CW_ANGLE_FIXED_LIMIT&0xff, CW_ANGLE_FIXED_LIMIT>>8, CCW_ANGLE_FIXED_LIMIT&0xff, CCW_ANGLE_FIXED_LIMIT>>8,  0,  85-5, 60,190,255,  3,  2/*0Ver8*/, 0x24,  0x24,  0,  0&0xff,0>>8,0&0xff,0>>8};
 //MODEL NUMBER 0X7300
-byte ROM_INITIAL_DATA[]={ 0, 0x73 ,PROGRAM_VERSION, DEFAULT_ID, DEFAULT_BAUD_RATE, 0, CW_ANGLE_FIXED_LIMIT&0xff, CW_ANGLE_FIXED_LIMIT>>8, CCW_ANGLE_FIXED_LIMIT&0xff, CCW_ANGLE_FIXED_LIMIT>>8,  0,  85-5, 60,190,255,  3,  2/*0Ver8*/, 0x24,  0x24,  0,  0&0xff,0>>8,0&0xff,0>>8};
+byte ROM_INITIAL_DATA[]={ 
+    0, 
+0x73 ,
+PROGRAM_VERSION, 
+DEFAULT_ID, 
+DEFAULT_BAUD_RATE, 
+0, 
+CW_ANGLE_FIXED_LIMIT&0xff, 
+CW_ANGLE_FIXED_LIMIT>>8, 
+CCW_ANGLE_FIXED_LIMIT&0xff, 
+CCW_ANGLE_FIXED_LIMIT>>8,  
+0,  
+85-5, 
+60,
+190,
+255,  
+3,  
+2/*0Ver8*/, 
+0x24,  
+0x24,  
+0,  
+0&0xff,
+0>>8,
+0&0xff,
+0>>8};
 
 /////////////////////////////////////////////////////////////////////////////
 //	</Constant Definition>
