@@ -5,13 +5,22 @@
 * Date               : 2010/08/25
 * Description        : This file contains the defines used for System fucntion
 *******************************************************************************/
+   /************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __SYSTEM_FUNC_H
 #define __SYSTEM_FUNC_H
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f4xx.h"
 #include "common_type.h"
+
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 
@@ -43,9 +52,9 @@ void dxl_set_power(PowerState state);
 u8 getVoltage(void);
 
 
-void EEPROM_Write( u32 Offset, u16 Data );
-u16 EEPROM_Read( u32 Offset );
-void EEPROM_Clear( void );
+//void EEPROM_Write( u32 Offset, u16 Data );
+//u16 EEPROM_Read( u32 Offset );
+//void EEPROM_Clear( void );
 
 #endif /* __SYSTEM_FUNC_H */
 

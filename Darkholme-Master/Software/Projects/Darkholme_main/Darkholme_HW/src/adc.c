@@ -5,10 +5,17 @@
 * Date               : 2010/09/08
 * Description        : functions about button control
 *******************************************************************************/
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
-#include "stm32f10x_type.h"
+#include "stm32f4xx_conf.h"
+//<<--DELETE #include "stm32f10x_type.h" //"stm32f10x_type.h" has been replaced by stm32f4xx.h
 #include "system_init.h"
 #include "common_type.h"
 #include "adc.h"
@@ -73,8 +80,8 @@ void __ISR_ADC(void)
 	}
 
 
-	ADC_RegularChannelConfig(ADC1, ADC_Channel[ADC_Channel_Index], 1 , ADC_SampleTime_239Cycles5);
-	ADC_RegularChannelConfig(ADC2, ADC_Channel[ADC_Channel_Index+8], 1 , ADC_SampleTime_239Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel[ADC_Channel_Index], 1 , ADC_SampleTime_480Cycles);
+	ADC_RegularChannelConfig(ADC2, ADC_Channel[ADC_Channel_Index+8], 1 , ADC_SampleTime_480Cycles);
 }
 
 

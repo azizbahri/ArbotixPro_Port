@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=2142343987
+Checksum=1785241842
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -36,6 +36,25 @@ ITMportsEnable=0
 ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
+[struct_types]
+Fmt0=USART_TypeDef-BRR	3	0
+Fmt1=USART_TypeDef-CR1	1	0
+Fmt2=USART_TypeDef-CR2	1	0
+Fmt3=USART_TypeDef-CR3	1	0
+Fmt4=USART_TypeDef-DR	1	0
+Fmt5=USART_TypeDef-GTPR	1	0
+Fmt6=USART_TypeDef-RESERVED0	1	0
+Fmt7=USART_TypeDef-RESERVED1	1	0
+Fmt8=USART_TypeDef-RESERVED2	1	0
+Fmt9=USART_TypeDef-RESERVED3	1	0
+Fmt10=USART_TypeDef-SR	1	0
+[watch_formats]
+Fmt0={W}1:0x40005000	1	0
+Fmt1={W}1:ADC_Channel_Index	3	0
+Fmt2={W}1:ADC_Value[ADC_Channel_Index]	3	0
+Fmt3={W}1:ReceivedData	4	0
+Fmt4={W}1:USARTx	1	0
+Fmt5={W}1:gbMiliSec	3	0
 [SWOTraceWindow]
 PcSampling=0
 InterruptLogs=0
@@ -76,7 +95,10 @@ Exclusions=
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Count=0
+Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Darkholme_SW\src\zgb_hal.c}.22.2" 0 0 1 "" 0 "" 0
+Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Darkholme_SW\src\main.c}.214.3" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Darkholme_HW\src\usart.c}.102.3" 0 0 1 "" 0 "" 0
+Count=3
 [Aliases]
 Count=0
 SuppressDialog=0

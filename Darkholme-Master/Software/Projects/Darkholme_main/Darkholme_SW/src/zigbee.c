@@ -1,9 +1,15 @@
 // Zigbee SDK platform independent source
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 #include "zgb_hal.h"
 #include "zigbee.h"
 #include "common_type.h"
-#include "stm32f10x_lib.h"
-#include "stm32f10x_type.h"
+//#include "stm32f10x_type.h"
 #include "system_init.h"
 #include "usart.h"
 
@@ -12,10 +18,11 @@ unsigned char gbRcvPacketNum;
 unsigned short gwRcvData;
 unsigned char gbRcvFlag;
 unsigned short gwMyZigbeeID;
+unsigned int Baudrate_XBEE =9600; //57600;
 
 int zgb_initialize( int devIndex )
 {
-	if( zgb_hal_open( devIndex, 57600 ) == 0) // Always fixed baudrate
+	if( zgb_hal_open( devIndex, Baudrate_XBEE ) == 0) // Always fixed baudrate
 		return 0;
 
 	gbRcvFlag = 0;

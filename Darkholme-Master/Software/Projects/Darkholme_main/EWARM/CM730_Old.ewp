@@ -12,24 +12,24 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>21</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
           <name>ExePath</name>
-          <state>Debug\Exe</state>
+          <state>C:\Users\aziz\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Exe</state>
         </option>
         <option>
           <name>ObjPath</name>
-          <state>Debug\Obj</state>
+          <state>C:\Users\aziz\Dropbox\IAR_Projects\GitHub_Outputs\Debug\Obj</state>
         </option>
         <option>
           <name>ListPath</name>
-          <state>Debug\List</state>
+          <state>C:\Users\aziz\Dropbox\IAR_Projects\GitHub_Outputs\Debug\List</state>
         </option>
         <option>
           <name>Variant</name>
-          <version>19</version>
+          <version>20</version>
           <state>0</state>
         </option>
         <option>
@@ -87,7 +87,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>6.30.1.53141</state>
+          <state>7.20.5.7621</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -137,12 +137,12 @@
         </option>
         <option>
           <name>GFPUCoreSlave</name>
-          <version>19</version>
+          <version>20</version>
           <state>0</state>
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>19</version>
+          <version>20</version>
           <state>0</state>
         </option>
         <option>
@@ -153,15 +153,23 @@
           <name>OGUseCmsisDspLib</name>
           <state>0</state>
         </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>28</version>
+        <version>31</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
         <option>
           <name>CCDefines</name>
           <state></state>
@@ -225,7 +233,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>0000000</state>
+          <state>00000000</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -293,7 +301,10 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state></state>
+          <state>C:\Users\aziz\Documents\GitHub\Darkholme\Darkholme-Master\Software\Projects\darkholme_main\CM730\CM730_APP\inc</state>
+          <state>C:\Users\aziz\Documents\GitHub\Darkholme\Darkholme-Master\Software\Projects\darkholme_main\CM730\CM730_HW\inc</state>
+          <state>C:\Users\aziz\Documents\GitHub\Darkholme\Darkholme-Master\Software\Projects\darkholme_main\CM730\stm32f10x_lib\inc</state>
+          <state>C:\Users\aziz\Documents\GitHub\Darkholme\Darkholme-Master\Software\Projects\darkholme_main\CM730</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -386,13 +397,26 @@
           <name>IccFloatSemantics</name>
           <state>0</state>
         </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>AARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>8</version>
+        <version>9</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -548,6 +572,10 @@
           <name>AExtraOptionsV2</name>
           <state></state>
         </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -605,7 +633,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>14</version>
+        <version>16</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -774,10 +802,6 @@
           <state>1</state>
         </option>
         <option>
-          <name>CrcAlgo</name>
-          <state>1</state>
-        </option>
-        <option>
           <name>CrcPoly</name>
           <state>0x11021</state>
         </option>
@@ -879,6 +903,20 @@
           <name>IlinkStackCallGraphFile</name>
           <state></state>
         </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -918,7 +956,7 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>21</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -935,7 +973,7 @@
         </option>
         <option>
           <name>Variant</name>
-          <version>19</version>
+          <version>20</version>
           <state>0</state>
         </option>
         <option>
@@ -1043,12 +1081,12 @@
         </option>
         <option>
           <name>GFPUCoreSlave</name>
-          <version>19</version>
+          <version>20</version>
           <state>0</state>
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>19</version>
+          <version>20</version>
           <state>0</state>
         </option>
         <option>
@@ -1059,15 +1097,23 @@
           <name>OGUseCmsisDspLib</name>
           <state>0</state>
         </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>28</version>
+        <version>31</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
         <option>
           <name>CCDefines</name>
           <state>NDEBUG</state>
@@ -1131,7 +1177,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>1111111</state>
+          <state>11111110</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -1292,13 +1338,26 @@
           <name>IccFloatSemantics</name>
           <state>0</state>
         </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>AARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>8</version>
+        <version>9</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1454,6 +1513,10 @@
           <name>AExtraOptionsV2</name>
           <state></state>
         </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1511,7 +1574,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>14</version>
+        <version>16</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1680,10 +1743,6 @@
           <state>1</state>
         </option>
         <option>
-          <name>CrcAlgo</name>
-          <state>1</state>
-        </option>
-        <option>
           <name>CrcPoly</name>
           <state>0x11021</state>
         </option>
@@ -1785,6 +1844,20 @@
           <name>IlinkStackCallGraphFile</name>
           <state></state>
         </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1814,9 +1887,147 @@
       <data/>
     </settings>
   </configuration>
-  <file>
-    <name>$PROJ_DIR$\main.c</name>
-  </file>
+  <group>
+    <name>CM3_Peri</name>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\misc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_adc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_bkp.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_can.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_crc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_dac.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_dbgmcu.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_dma.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_exti.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_flash.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_fsmc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_gpio.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_i2c.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_iwdg.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_lib.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_nvic.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_pwr.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_rcc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_rtc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_sdio.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_spi.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_systick.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_tim.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_tim1.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_usart.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_vector.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\stm32f10x_wwdg.c</name>
+    </file>
+  </group>
+  <group>
+    <name>CM730_HW</name>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\adc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\button.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\gyro_acc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\led.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\sound.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\system_func.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\system_init.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_HW\src\usart.c</name>
+    </file>
+  </group>
+  <group>
+    <name>CM730_SW</name>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\CM_DXL_COM.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\isr.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\main.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\serial.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\stm32f10x_it.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\zgb_hal.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\CM730_APP\src\zigbee.c</name>
+    </file>
+  </group>
+  <group>
+    <name>Utils</name>
+    <file>
+      <name>$PROJ_DIR$\..\CM730\stm32f10x_lib\src\cortexm3_macro.s</name>
+    </file>
+  </group>
 </project>
 
 

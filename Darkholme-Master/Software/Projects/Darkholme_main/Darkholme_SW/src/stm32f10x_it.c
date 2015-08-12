@@ -14,6 +14,15 @@
 * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
 * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
 *******************************************************************************/
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
+
+//NOTES:  This file must be migrated to stm32f4xx_it.c
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"

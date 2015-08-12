@@ -12,9 +12,8 @@
 * Date               : 07/07/2015
 * Description        : Main program body ported for STM32F429I
 *******************************************************************************/
-//test
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
+
 #include "common_type.h"
 #include "led.h"
 //#include "eeprom.h"
@@ -27,13 +26,22 @@
 #include "adc.h"
 #include "zigbee.h"
 #include "CM_DXL_COM.h"
-#include "sound.h"
+//#include "sound.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
+//test functions
+void SendData(USART_TypeDef* USARTx, volatile char *s);
+void Test_gpio();
+//test ADC
+void Test_ADC();
+//Test UART
+void Test_UART();
+//Test SPI
+void Test_SPI();
 /* Private functions ---------------------------------------------------------*/
 
 
@@ -67,7 +75,7 @@ int main(void)
 	BufferClear(USART_PC);
 	BufferClear(USART_ZIGBEE);
 
-	setBuzzerOff();
+	//setBuzzerOff();       remove sound
 
 /*
 	for(bCount =0; bCount < 50; bCount++ )
@@ -175,9 +183,51 @@ int main(void)
 
 */
 
+        
+//        //Darkholm firmware test cases
+//        //Test GPIO
+     //   Test_gpio();
+//        //test ADC
+//        Test_ADC();
+//        //Test UART
+      // Test_UART();
+//        //Test SPI
+//        Test_SPI();
+//        
 	Process();
 
+        
 	while(1);
 
+}
+
+
+void Test_gpio(){
+  GPIO_SetBits(PORT_ENABLE_DXLPWR, PIN_ENABLE_DXLPWR)  ;
+}
+//test ADC
+void Test_ADC(){
+
+}
+//Test UART
+void Test_UART(){
+  SendData(PC_USART, "PC UART");
+  SendData(DXL_USART, "DXL USART, TX_PB6, RX_PB6");
+  SendData(ZIGBEE_USART, "ZIGBEE USART, TX_PC12, RX_PD2");
+  SendData(CPU_USART, "CPU USART");
+}
+//Test SPI
+void Test_SPI(){
+  
+}
+//writes out a string to the passed in usart. The string is passed as a pointer
+void SendData(USART_TypeDef* USARTx, volatile char *s){
+
+	while(*s){
+		// wait until data register is empty
+		while( !(USARTx->SR & 0x00000040) );
+		USART_SendData(USARTx, *s);
+		*s++;
+	}
 }
 

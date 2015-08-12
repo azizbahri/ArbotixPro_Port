@@ -2,7 +2,13 @@
 
 <workspace>
   <project>
+    <path>$WS_DIR$\CM730_Old.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\darkholme.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\ExampleTemplate\Projects\main\EWARM\example.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

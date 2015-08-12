@@ -33,7 +33,7 @@ vu16 CCR4_Val = 12;    		// 12us
 u32 Baudrate_DXL = 	1000000;
 u32 Baudrate_ZIGBEE = 57600;
 //u32 Baudrate_PC = 57600;
-u32 Baudrate_PC = 1000000;
+u32 Baudrate_PC = 9600;//1000000;
 
 //u8 SPI_Data_Transmit_Complete=FALSE;
 

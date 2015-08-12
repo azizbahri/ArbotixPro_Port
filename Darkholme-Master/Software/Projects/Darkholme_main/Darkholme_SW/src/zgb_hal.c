@@ -1,5 +1,12 @@
 // Zigbee SDK platform dependent source
-#include "stm32f10x_lib.h"
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
+
 #include "system_init.h"
 #include "usart.h"
 #include "zgb_hal.h"
@@ -12,7 +19,7 @@ int zgb_hal_open( int devIndex, int baudrate )
 	//unsigned long int baud = 0;//(unsigned long int)baudrate;
 	//int baud = (int)baudrate;
 	//TxDHex32(baudrate);
-	USART_Configuration(USART_ZIGBEE,57600);
+	USART_Configuration(USART_ZIGBEE,baudrate);
 
 	return 1;
 

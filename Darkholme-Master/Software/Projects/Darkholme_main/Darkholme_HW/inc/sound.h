@@ -8,7 +8,7 @@
 #ifndef SOUND_H_
 #define SOUND_H_
 
-#include "stm32f10x_type.h"
+#include "stm32f4xx.h"
 
 #define SIZE_DOREMITABLE		52
 #define SIZE_SOUNDTABLE			29

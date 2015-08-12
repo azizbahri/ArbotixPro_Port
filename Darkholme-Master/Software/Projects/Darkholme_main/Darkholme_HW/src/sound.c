@@ -4,11 +4,18 @@
  *  Created on: 2011. 2. 17.
  *      Author: Administrator
  */
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 #include "sound.h"
 
-#include "stm32f10x_lib.h"
-#include "stm32f10x_type.h"
+#include "stm32f4xx_conf.h"
+//<<--DELETE #include "stm32f10x_type.h" //"stm32f10x_type.h" has been replaced by stm32f4xx.h
 #include "common_type.h"
 #include "system_init.h"
 

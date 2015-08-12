@@ -5,10 +5,17 @@
  * Date               : 08/25/2010
  * Description        : functions about System function.
  *******************************************************************************/
+   /************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x_lib.h"
-#include "stm32f10x_type.h"
+#include "stm32f4xx_conf.h"
+//<<--DELETE #include "stm32f10x_type.h" //"stm32f10x_type.h" has been replaced by stm32f4xx.h
 #include "common_type.h"
 #include "system_init.h"
 #include "system_func.h"
@@ -328,17 +335,20 @@ u8 getResetSource(void) {
 void mDelay(u32 nTime)
 {
 
-	  /* Enable the SysTick Counter */
-	  SysTick_CounterCmd(SysTick_Counter_Enable);
-
+  SysTick_Config(SystemCoreClock/1000);
+//	  /* Enable the SysTick Counter */
+//	  SysTick_CounterCmd(SysTick_Counter_Enable);
+  SysTick_Config(SystemCoreClock/1000);
 	  gwTimingDelay = nTime;
-
+//
 	  while(gwTimingDelay != 0);
-
-	  /* Disable SysTick Counter */
-	  SysTick_CounterCmd(SysTick_Counter_Disable);
-	  /* Clear SysTick Counter */
-	  SysTick_CounterCmd(SysTick_Counter_Clear);
+//
+//	  /* Disable SysTick Counter */
+//	  SysTick_CounterCmd(SysTick_Counter_Disable);
+//	  /* Clear SysTick Counter */
+//	  SysTick_CounterCmd(SysTick_Counter_Clear);
+  
+  
 
 }
 
@@ -383,64 +393,64 @@ u8 getVoltage(void)
 }
 
 
-u16 EEPROM_Read( u32 Offset )
-{
-	u16* Adr;
-	Adr = (u16*)(EEPROM_START_ADDRESS + (Offset<<1));
-	return *Adr;
-}
-
-void EEPROM_Write( u32 Offset, u16 Data )
-{
-	volatile FLASH_Status FLASHStatus;
-	u32 Adr;
-	u16 cnt;
-	u16 Buffer[512];
-
-	Adr = EEPROM_START_ADDRESS + (Offset<<1);
-
-	if( (Data != EEPROM_Read(Offset)) && (Offset<512) )
-	{
-		for( cnt=0; cnt<512; cnt++ )
-		{
-			Buffer[cnt] = EEPROM_Read(cnt);
-		}
-		Buffer[Offset] = Data;
-
-		FLASH_Unlock();
-		/* Clear All pending flags */
-		FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
-
-		if( (Data==0) || (EEPROM_Read(Offset)==0xFFFF) )
-		{
-			FLASHStatus = FLASH_ProgramHalfWord( Adr, Data );
-		}
-		else
-		{		// Erase
-			/* Erase the FLASH pages */
-			FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
-
-			Adr = EEPROM_START_ADDRESS;
-
-			for( cnt=0; cnt<512; cnt++ )
-			{
-				if( Buffer[cnt] != 0xFFFF ) FLASHStatus = FLASH_ProgramHalfWord( Adr, Buffer[cnt] );
-				Adr += 2;
-			}
-		}
-
-		FLASH_Lock();
-	}
-}
-
-void EEPROM_Clear( void )
-{
-	volatile FLASH_Status FLASHStatus;
-
-	FLASH_Unlock();
-	FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
-	FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
-	FLASH_Lock();
-}
+//u16 EEPROM_Read( u32 Offset )
+//{
+//	u16* Adr;
+//	Adr = (u16*)(EEPROM_START_ADDRESS + (Offset<<1));
+//	return *Adr;
+//}
+//
+//void EEPROM_Write( u32 Offset, u16 Data )
+//{
+//	volatile FLASH_Status FLASHStatus;
+//	u32 Adr;
+//	u16 cnt;
+//	u16 Buffer[512];
+//
+//	Adr = EEPROM_START_ADDRESS + (Offset<<1);
+//
+//	if( (Data != EEPROM_Read(Offset)) && (Offset<512) )
+//	{
+//		for( cnt=0; cnt<512; cnt++ )
+//		{
+//			Buffer[cnt] = EEPROM_Read(cnt);
+//		}
+//		Buffer[Offset] = Data;
+//
+//		FLASH_Unlock();
+//		/* Clear All pending flags */
+//		FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
+//
+//		if( (Data==0) || (EEPROM_Read(Offset)==0xFFFF) )
+//		{
+//			FLASHStatus = FLASH_ProgramHalfWord( Adr, Data );
+//		}
+//		else
+//		{		// Erase
+//			/* Erase the FLASH pages */
+//			FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
+//
+//			Adr = EEPROM_START_ADDRESS;
+//
+//			for( cnt=0; cnt<512; cnt++ )
+//			{
+//				if( Buffer[cnt] != 0xFFFF ) FLASHStatus = FLASH_ProgramHalfWord( Adr, Buffer[cnt] );
+//				Adr += 2;
+//			}
+//		}
+//
+//		FLASH_Lock();
+//	}
+//}
+//
+//void EEPROM_Clear( void )
+//{
+//	volatile FLASH_Status FLASHStatus;
+//
+//	FLASH_Unlock();
+//	FLASH_ClearFlag(FLASH_FLAG_BSY | FLASH_FLAG_EOP | FLASH_FLAG_PGERR | FLASH_FLAG_WRPRTERR);
+//	FLASHStatus = FLASH_ErasePage( EEPROM_START_ADDRESS);
+//	FLASH_Lock();
+//}
 
 /******************* (C) COPYRIGHT 2010 ROBOTIS *****END OF FILE****/

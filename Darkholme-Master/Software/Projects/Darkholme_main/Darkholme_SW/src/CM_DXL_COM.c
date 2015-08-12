@@ -1,7 +1,12 @@
-
+/************************* PROJECT DARKHOLME **************************
+* File Name          : main.c
+* Author             : Aziz
+* Version            : V0.0.1
+* Date               : 07/07/2015
+* Description        : Main program body ported for STM32F429I
+*******************************************************************************/
 #include "common_type.h"
 #include "dynamixel.h"
-#include "stm32f10x_lib.h"
 #include "system_func.h"
 #include "adc.h"
 #include "led.h"
@@ -245,7 +250,31 @@
 
 //byte ROM_INITIAL_DATA[]={ 28, 0 ,PROGRAM_VERSION, DEFAULT_ID, DEFAULT_BAUD_RATE, 0, CW_ANGLE_FIXED_LIMIT&0xff, CW_ANGLE_FIXED_LIMIT>>8, CCW_ANGLE_FIXED_LIMIT&0xff, CCW_ANGLE_FIXED_LIMIT>>8,  0,  85-5, 60,190,255,  3,  2/*0Ver8*/, 0x24,  0x24,  0,  0&0xff,0>>8,0&0xff,0>>8};
 //MODEL NUMBER 0X7300
-byte ROM_INITIAL_DATA[]={ 0, 0x73 ,PROGRAM_VERSION, DEFAULT_ID, DEFAULT_BAUD_RATE, 0, CW_ANGLE_FIXED_LIMIT&0xff, CW_ANGLE_FIXED_LIMIT>>8, CCW_ANGLE_FIXED_LIMIT&0xff, CCW_ANGLE_FIXED_LIMIT>>8,  0,  85-5, 60,190,255,  3,  2/*0Ver8*/, 0x24,  0x24,  0,  0&0xff,0>>8,0&0xff,0>>8};
+byte ROM_INITIAL_DATA[]={ 
+    0, 
+0x73 ,
+PROGRAM_VERSION, 
+DEFAULT_ID, 
+DEFAULT_BAUD_RATE, 
+0, 
+CW_ANGLE_FIXED_LIMIT&0xff, 
+CW_ANGLE_FIXED_LIMIT>>8, 
+CCW_ANGLE_FIXED_LIMIT&0xff, 
+CCW_ANGLE_FIXED_LIMIT>>8,  
+0,  
+85-5, 
+60,
+190,
+255,  
+3,  
+2/*0Ver8*/, 
+0x24,  
+0x24,  
+0,  
+0&0xff,
+0>>8,
+0&0xff,
+0>>8};
 
 /////////////////////////////////////////////////////////////////////////////
 //	</Constant Definition>
@@ -256,7 +285,7 @@ byte ROM_INITIAL_DATA[]={ 0, 0x73 ,PROGRAM_VERSION, DEFAULT_ID, DEFAULT_BAUD_RAT
 //	<Macro Definition>
 /////////////////////////////////////////////////////////////////////////////
 
-#define SYSTEM_RESET NVIC_GenerateSystemReset()
+#define SYSTEM_RESET NVIC_SystemReset()
 
 #define TxD8 TxDByte
 #define RxD8 RxDByte
@@ -804,7 +833,7 @@ void Process(void)
               (gbParameterLength == 6) )
           {
             if (gbStartAddress < CONTROL_TABLE_LEN) {
-            	BKP_WriteBackupRegister((gbStartAddress+1)<<2, gbpParameter[1]);
+            	//BKP_WriteBackupRegister((gbStartAddress+1)<<2, gbpParameter[1]);      //Remove Backup
             	//ROM_CAST(gbStartAddress) = gbpControlTable[gbStartAddress] = gbpParameter[1];
             }
             else {
@@ -859,7 +888,7 @@ void WriteControlTable(void)
     {
 
       WORD_CAST(gbpControlTable[bPointer]) = WORD_CAST(gbpParameter[bCount]);
-      if(bPointer < ROM_CONTROL_TABLE_LEN) BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));
+      if(bPointer < ROM_CONTROL_TABLE_LEN) ;//BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));        removed
       bCount++;
 
 /*
@@ -874,7 +903,7 @@ void WriteControlTable(void)
     else //if(gbpDataSize[bPointer] == 1)//length was already checked.
     {
       gbpControlTable[bPointer] = gbpParameter[bCount];
-      if(bPointer < ROM_CONTROL_TABLE_LEN) BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));
+      if(bPointer < ROM_CONTROL_TABLE_LEN);// BKP_WriteBackupRegister((bPointer+1)<<2, WORD_CAST(gbpParameter[bCount]));        Removed
     }
   }
 }
@@ -979,27 +1008,28 @@ void ProcessAfterWriting(void)
 		break;
 
 		case	P_BUZZER_DATA0:
-
-			setBuzzerPlayLength(GB_BUZZER_DATA1);
-
-			if( getBuzzerState() == 0 )
-			{
-				setBuzzerData(GB_BUZZER_DATA0);
-				PlayBuzzer();
-			}
-			else
-			if( GB_BUZZER_DATA1 == 0xFE )
-			{
-				setBuzzerData(GB_BUZZER_DATA0);
-				PlayBuzzer();
-			}
+//no buzzer in darkholme
+//			setBuzzerPlayLength(GB_BUZZER_DATA1);
+//
+//			if( getBuzzerState() == 0 )
+//			{
+//				setBuzzerData(GB_BUZZER_DATA0);
+//				PlayBuzzer();
+//			}
+//			else
+//			if( GB_BUZZER_DATA1 == 0xFE )
+//			{
+//				setBuzzerData(GB_BUZZER_DATA0);
+//				PlayBuzzer();
+//			}
 		break;
 
 		case	P_BUZZER_DATA1:
-			if( GB_BUZZER_DATA1 == 0x00 )
-			{
-				setBuzzerOff();
-			}
+                  //no buzzer in darkholme
+//			if( GB_BUZZER_DATA1 == 0x00 )
+//			{
+//				setBuzzerOff();
+//			}
 		break;
 
 		case	P_TX_REMOCON_DATA_L:
