@@ -24,7 +24,7 @@
 ///////////////////ADC Channels//////////////////////////////////////////////////////////
 #define ADC1_Channel_X  ADC_Channel_10
 #define ADC2_Channel_X  ADC_Channel_4
-//when changing peripherals, make sure to change the corrosponding AFs
+//when changing peripherals, make sure to change the corresponding AFs
 ///////////////////UART\//////////////////////////////////////////////////////////
 #define DXL_USART       USART1
 #define PC_USART        USART3
@@ -63,6 +63,15 @@
 #define PORT_PC_TXD				GPIOB
 #define PORT_PC_RXD				GPIOB
 
+
+
+
+///////////////////ADC Pins//////////////////////////////////////////////////////////
+
+#define PIN_ADC0				GPIO_Pin_0
+#define PIN_ADC1				GPIO_Pin_1
+#define PIN_ADC2				GPIO_Pin_2
+#define PIN_ADC3				GPIO_Pin_3
 #define PIN_ADC4				GPIO_Pin_0
 #define PIN_ADC5				GPIO_Pin_1
 #define PIN_ADC6				GPIO_Pin_2
@@ -71,11 +80,30 @@
 #define PIN_ADC9				GPIO_Pin_5
 #define PIN_ADC10				GPIO_Pin_6
 #define PIN_ADC11				GPIO_Pin_7
+#define PIN_ADC12				GPIO_Pin_4
+#define PIN_ADC13				GPIO_Pin_5
+#define PIN_ADC14				GPIO_Pin_0
+#define PIN_ADC15				GPIO_Pin_1
+
+#define PORT_ADC0				GPIOC
+#define PORT_ADC1				GPIOC
+#define PORT_ADC2				GPIOC
+#define PORT_ADC3				GPIOC
+#define PORT_ADC4				GPIOA
+#define PORT_ADC5				GPIOA
+#define PORT_ADC6				GPIOA
+#define PORT_ADC7				GPIOA
+#define PORT_ADC8				GPIOA
+#define PORT_ADC9				GPIOA
+#define PORT_ADC10				GPIOA
+#define PORT_ADC11				GPIOA
+#define PORT_ADC12				GPIOC
+#define PORT_ADC13				GPIOC
+#define PORT_ADC14				GPIOB
+#define PORT_ADC15				GPIOB
 
 //#define PIN_LED6_R				GPIO_Pin_8
 #define PIN_PA8					GPIO_Pin_8
-
-
 
 //#define PIN_LED6_G				GPIO_Pin_11
 #define PIN_SW_MODE				GPIO_Pin_11
@@ -91,14 +119,7 @@
 //#define PIN_SW_MODE				GPIO_Pin_15
 #define PIN_PA14				GPIO_Pin_15
 
-#define PORT_ADC4				GPIOA
-#define PORT_ADC5				GPIOA
-#define PORT_ADC6				GPIOA
-#define PORT_ADC7				GPIOA
-#define PORT_ADC8				GPIOA
-#define PORT_ADC9				GPIOA
-#define PORT_ADC10				GPIOA
-#define PORT_ADC11				GPIOA
+
 
 //#define PORT_LED6_R				GPIOA
 #define PORT_PA8				GPIOA
@@ -117,8 +138,7 @@
 
 
 ///////////////////PORTB//////////////////////////////////////////////////////////
-#define PIN_ADC14				GPIO_Pin_0
-#define PIN_ADC15				GPIO_Pin_1
+
 #define PIN_BOOT1				GPIO_Pin_2
 
 
@@ -138,8 +158,6 @@
 #define PIN_SIG_MISO			GPIO_Pin_14
 #define PIN_SIG_MOSI			GPIO_Pin_15
 
-#define PORT_ADC14				GPIOB
-#define PORT_ADC15				GPIOB
 #define PORT_BOOT1				GPIOB
 
 //#define PORT_ENABLE_ZIGBEE	GPIOB
@@ -161,12 +179,7 @@
 
 
 ///////////////////PORTC//////////////////////////////////////////////////////////
-#define PIN_ADC0				GPIO_Pin_0
-#define PIN_ADC1				GPIO_Pin_1
-#define PIN_ADC2				GPIO_Pin_2
-#define PIN_ADC3				GPIO_Pin_3
-#define PIN_ADC12				GPIO_Pin_4
-#define PIN_ADC13				GPIO_Pin_5
+
 #define PIN_LED4				GPIO_Pin_6
 
 
@@ -187,12 +200,6 @@
 #define PIN_LED2				GPIO_Pin_15
 
 
-#define PORT_ADC0				GPIOC
-#define PORT_ADC1				GPIOC
-#define PORT_ADC2				GPIOC
-#define PORT_ADC3				GPIOC
-#define PORT_ADC12				GPIOC
-#define PORT_ADC13				GPIOC
 #define PORT_LED4				GPIOC
 
 //#define PORT_LED5_R				GPIOC
