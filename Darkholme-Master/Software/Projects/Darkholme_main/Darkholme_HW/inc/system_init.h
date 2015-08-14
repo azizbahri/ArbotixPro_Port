@@ -63,11 +63,7 @@
 #define PORT_PC_TXD				GPIOB
 #define PORT_PC_RXD				GPIOB
 
-
-
-
 ///////////////////ADC Pins//////////////////////////////////////////////////////////
-
 #define PIN_ADC0				GPIO_Pin_0
 #define PIN_ADC1				GPIO_Pin_1
 #define PIN_ADC2				GPIO_Pin_2
@@ -102,18 +98,16 @@
 #define PORT_ADC14				GPIOB
 #define PORT_ADC15				GPIOB
 
+///////////////////GPIO Pins//////////////////////////////////////////////////////////
 //#define PIN_LED6_R				GPIO_Pin_8
 #define PIN_PA8					GPIO_Pin_8
-
 //#define PIN_LED6_G				GPIO_Pin_11
 #define PIN_SW_MODE				GPIO_Pin_11
-
 //#define PIN_LED6_B				GPIO_Pin_12
-#define PIN_SW_START			GPIO_Pin_12
-
+#define PIN_SW_START			        GPIO_Pin_12
 #define PIN_PA13				GPIO_Pin_13
 
-//#define PIN_SW_START			GPIO_Pin_14
+//#define PIN_SW_START			        GPIO_Pin_14
 #define PIN_PA15				GPIO_Pin_14
 
 //#define PIN_SW_MODE				GPIO_Pin_15
@@ -128,8 +122,8 @@
 
 //#define PORT_LED6_G				GPIOA
 //#define PORT_LED6_B				GPIOA
-#define PORT_SW_MODE			GPIOA
-#define PORT_SW_START			GPIOA
+#define PORT_SW_MODE			        GPIOA
+#define PORT_SW_START			        GPIOA
 
 #define PORT_PA13				GPIOA
 
@@ -142,21 +136,21 @@
 #define PIN_BOOT1				GPIO_Pin_2
 
 
-//#define PIN_ENABLE_ZIGBEE		GPIO_Pin_3
+//#define PIN_ENABLE_ZIGBEE		        GPIO_Pin_3
 #define PIN_PB3					GPIO_Pin_3
 
 //#define PIN_ENABLE_TXD			GPIO_Pin_4
 #define PIN_PB4					GPIO_Pin_4
 
-#define PIN_ENABLE_RXD			GPIO_Pin_5
+#define PIN_ENABLE_RXD			        GPIO_Pin_5
 
-#define PIN_ENABLE_DXLPWR		GPIO_Pin_8
+#define PIN_ENABLE_DXLPWR		        GPIO_Pin_8
 #define PIN_BUZZER				GPIO_Pin_9
 
 #define PIN_LED3				GPIO_Pin_12
 #define PIN_SIG_SCK				GPIO_Pin_13
-#define PIN_SIG_MISO			GPIO_Pin_14
-#define PIN_SIG_MOSI			GPIO_Pin_15
+#define PIN_SIG_MISO			        GPIO_Pin_14
+#define PIN_SIG_MOSI			        GPIO_Pin_15
 
 #define PORT_BOOT1				GPIOB
 
@@ -166,15 +160,15 @@
 //#define PORT_ENABLE_TXD			GPIOB
 #define PORT_PB4				GPIOB
 
-#define PORT_ENABLE_RXD			GPIOB
+#define PORT_ENABLE_RXD			        GPIOB
 
-#define PORT_ENABLE_DXLPWR		GPIOB
+#define PORT_ENABLE_DXLPWR		        GPIOB
 #define PORT_BUZZER				GPIOB
 
 #define PORT_LED3				GPIOB
-#define PORT_SIG_SCK			GPIOB
-#define PORT_SIG_MISO			GPIOB
-#define PORT_SIG_MOSI			GPIOB
+#define PORT_SIG_SCK			        GPIOB
+#define PORT_SIG_MISO			        GPIOB
+#define PORT_SIG_MOSI			        GPIOB
 
 
 
@@ -187,13 +181,13 @@
 #define PIN_PC7					GPIO_Pin_7
 
 //#define PIN_LED5_G				GPIO_Pin_8
-#define PIN_ENABLE_ZIGBEE		GPIO_Pin_8
+#define PIN_ENABLE_ZIGBEE		        GPIO_Pin_8
 
 //#define PIN_LED5_B				GPIO_Pin_9
-#define PIN_ENABLE_TXD			GPIO_Pin_9
+#define PIN_ENABLE_TXD			        GPIO_Pin_9
 
-#define PIN_SIG_ACC_CS			GPIO_Pin_10
-#define PIN_SIG_GYRO_CS			GPIO_Pin_11
+#define PIN_SIG_ACC_CS			        GPIO_Pin_10
+#define PIN_SIG_GYRO_CS			        GPIO_Pin_11
 
 #define PIN_LED_TX				GPIO_Pin_13
 #define PIN_LED_RX				GPIO_Pin_14
@@ -206,13 +200,13 @@
 #define PORT_PC7				GPIOC
 
 //#define PORT_LED5_G				GPIOC
-#define PORT_ENABLE_ZIGBEE		GPIOC
+#define PORT_ENABLE_ZIGBEE		        GPIOC
 
 //#define PORT_LED5_B				GPIOC
-#define PORT_ENABLE_TXD			GPIOC
+#define PORT_ENABLE_TXD			        GPIOC
 
-#define PORT_SIG_ACC_CS			GPIOC
-#define PORT_SIG_GYRO_CS		GPIOC
+#define PORT_SIG_ACC_CS			        GPIOC
+#define PORT_SIG_GYRO_CS		        GPIOC
 
 #define PORT_LED_TX				GPIOC
 #define PORT_LED_RX				GPIOC
@@ -225,18 +219,18 @@
 
 
 /////////////////////////// LED REDEFINE /////////////////////////////////////////
-#define PIN_LED_MANAGE		PIN_LED2
-#define PIN_LED_EDIT		PIN_LED3
-#define PIN_LED_PLAY		PIN_LED4
+#define PIN_LED_MANAGE		                PIN_LED2
+#define PIN_LED_EDIT		                PIN_LED3
+#define PIN_LED_PLAY		                PIN_LED4
 
-#define PORT_LED_MANAGE		PORT_LED2
-#define PORT_LED_EDIT		PORT_LED3
-#define PORT_LED_PLAY		PORT_LED4
+#define PORT_LED_MANAGE		                PORT_LED2
+#define PORT_LED_EDIT		                PORT_LED3
+#define PORT_LED_PLAY		                PORT_LED4
 
-//#define PIN_LED_POWER		PIN_LED6_R
+//#define PIN_LED_POWER		                PIN_LED6_R
 
-//#define PIN_LED_AUX			PIN_LED5_R
-//#define PIN_LED_AUX			PIN_PC7
+//#define PIN_LED_AUX			        PIN_LED5_R
+//#define PIN_LED_AUX			        PIN_PC7
 
 /*
 
