@@ -631,7 +631,7 @@ void GPIO_Configuration(void)
                   GPIO_OType_PP,
                   GPIO_PuPd_UP);
   //PIN_ZIGBEE_TXD
-  
+                                     
   GPIO_InitStruct.GPIO_Pin = PIN_ZIGBEE_TXD;
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; //we are setting the pin to be alternative function
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
