@@ -260,7 +260,10 @@ void TIM2_IRQHandler(void)
     }
     if( !( gwCounter1 & 31 ) ) // 3840us, 250Hz
     {
-      ISR_SPI_READ();
+        //call IMU data
+        
+      ISR_IMU_READ();    //MPU6050 is on I2C port
+      //ISR_SPI_READ(); //ArbotixPro IMU is on the SPI port
       //__ISR_Buzzer_Manage();  Removed sound
       GB_BUTTON = ReadButton();
     }

@@ -103,9 +103,163 @@ TM_MPU6050_Result_t TM_MPU6050_Init(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_
         TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x17, 0x00);
         TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x18, 0x00);
         
+        //Calibrate
+         MPU6050_Calibration(DataStruct);
+        
+        
         
         /* Return OK */
 	return TM_MPU6050_Result_Ok;
+}
+
+void MPU6050_Calibration(TM_MPU6050_t* DataStruct){
+  float GyroAvg_z = 0.0;
+  float GyroAvg_x = 0.0;
+  float GyroAvg_y = 0.0;
+  
+  volatile int16_t AcclAvg_x=0;
+  volatile int16_t AcclAvg_y=0;
+  volatile  int16_t AcclAvg_z=0;
+  
+  volatile uint8_t XG_OFFS_H;
+  volatile uint8_t XG_OFFS_L;
+  volatile uint8_t YG_OFFS_H;
+  volatile uint8_t YG_OFFS_L;
+  volatile uint8_t ZG_OFFS_H;
+  volatile uint8_t ZG_OFFS_L;
+  
+  volatile int16_t AccelFac_x=0;
+  volatile int16_t AccelFac_y=0;
+  volatile int16_t AccelFac_z=0;
+  
+  
+  float OffsetVal_x = 0.0;
+  float OffsetVal_y = 0.0;
+  float OffsetVal_z = 0.0;
+  uint8_t OffsetValH=0;
+  uint8_t OffsetValL=0;
+  uint16_t temp=0;
+  uint8_t i =0;
+  /*attempt to calibrate the Gyro
+  TODO: currently only works for 250 dps, to make it work with other ranges change 131.072
+  */
+  //1 get  readings and get an avarage value
+  for(i=0;i<5;i++){
+    //Delay(20);
+    TM_MPU6050_ReadAll(DataStruct);
+    GyroAvg_x +=(float) DataStruct->Gyroscope_X/131.072;
+    GyroAvg_y +=(float) DataStruct->Gyroscope_Y/131.072;
+    GyroAvg_z +=(float) DataStruct->Gyroscope_Z/131.072;
+  }
+  GyroAvg_x = GyroAvg_x/5.0;     //get avarage
+  GyroAvg_y = GyroAvg_y/5.0;     //get avarage
+  GyroAvg_z = GyroAvg_z/5.0;     //get avarage
+  //2 convert the value into offset value
+  GyroAvg_x = -GyroAvg_x;        //invert the sign
+  GyroAvg_y = -GyroAvg_y;        //invert the sign
+  GyroAvg_z = -GyroAvg_z;        //invert the sign
+  
+  OffsetVal_x= 32.8 * GyroAvg_x;  //1 dps = 32.8 in offset register
+  OffsetVal_y= 32.8 * GyroAvg_y;  //1 dps = 32.8 in offset register 
+  OffsetVal_z= 32.8 * GyroAvg_z;  //1 dps = 32.8 in offset register 
+  
+  //3 apply the offsets into the corect registers
+  //Apply to X offset register
+  temp = (uint16_t)OffsetVal_x;
+  OffsetValH = (temp >> 8) ; 
+  OffsetValL = temp & 0x00FF;
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x13, OffsetValH);   
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x14, OffsetValL);
+  
+  //Apply to Y offset register
+  temp = (uint16_t)OffsetVal_y;
+  OffsetValH = (temp >> 8) ; 
+  OffsetValL = temp & 0x00FF;
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x15, OffsetValH);   
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x16, OffsetValL);
+  
+  //Apply to Z offset register
+  temp = (uint16_t)OffsetVal_z;
+  OffsetValH = (temp >> 8) ; 
+  OffsetValL = temp & 0x00FF;
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x17, OffsetValH);   
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, 0x18, OffsetValL);
+  
+  
+  
+  
+  /*attempt to calibrate the Accelerometer
+  Factory settings +- Current readings = Offset value
+  */
+  
+  //1 read the factory settings from the offet registers
+  XG_OFFS_H = TM_I2C_Read(MPU6050_I2C, DataStruct->Address, XG_OFFS_USRH);
+  XG_OFFS_L = TM_I2C_Read(MPU6050_I2C, DataStruct->Address, XG_OFFS_USRL);
+  //merge the values
+  AccelFac_x = (XG_OFFS_H<<8) | XG_OFFS_L;
+
+  YG_OFFS_H = TM_I2C_Read(MPU6050_I2C, DataStruct->Address, YG_OFFS_USRH);
+  YG_OFFS_L = TM_I2C_Read(MPU6050_I2C, DataStruct->Address, YG_OFFS_USRL);
+  //merge the values
+  AccelFac_y = (YG_OFFS_H<<8) | YG_OFFS_L;
+  
+  ZG_OFFS_H = TM_I2C_Read(MPU6050_I2C, DataStruct->Address, ZG_OFFS_USRH);
+  ZG_OFFS_L = TM_I2C_Read(MPU6050_I2C, DataStruct->Address, ZG_OFFS_USRL);
+  //merge the values
+  AccelFac_z = (ZG_OFFS_H<<8) | ZG_OFFS_L;
+  
+  //2 read current accl values then calculate offset 
+  //  for(i=0;i<5;i++){
+  //    Delay(20);
+  TM_MPU6050_ReadAll(DataStruct);
+  AcclAvg_x =(DataStruct->Accelerometer_X)/16;
+  AcclAvg_y =(DataStruct->Accelerometer_Y)/16;
+  AcclAvg_z =(DataStruct->Accelerometer_Z)/16;
+  //  }
+  //  //get avarage
+  //  AcclAvg_x = AcclAvg_x/5;
+  //  AcclAvg_y = AcclAvg_y/5;
+  //  AcclAvg_z = AcclAvg_z/5;
+  
+  //convert values to +- 8G. where 1mg = 4096 LSB
+//  AcclAvg_x = -AcclAvg_x;
+//  AcclAvg_y = -AcclAvg_y;
+//  AcclAvg_z = -AcclAvg_z;
+  
+  
+  
+  
+  //calculate X axis offset
+  volatile int16_t AccOffset_x = 0;
+  AccelFac_x -=(AcclAvg_x & ~1);
+ // AccOffset_x= AccelFac_x + AcclAvg_x;
+  OffsetValH = AccelFac_x >> 8;
+  OffsetValL = AccelFac_x & 0x00FF;
+    
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, XG_OFFS_USRH, OffsetValH);   
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, XG_OFFS_USRL, OffsetValL);
+  
+  //calculate Y axis offset
+  int16_t AccOffset_y = 0;
+  AccelFac_y -=(AcclAvg_y & ~1);
+  //AccOffset_y= AccelFac_y + AcclAvg_y;
+  OffsetValH = AccelFac_y >> 8;
+  OffsetValL = AccelFac_y & 0x00FF;
+    
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, YG_OFFS_USRH, OffsetValH);   
+ TM_I2C_Write(MPU6050_I2C, DataStruct->Address, YG_OFFS_USRL, OffsetValL);
+  
+  //calculate Z axis offset
+  int16_t AccOffset_z = 0;
+  AccelFac_z -=(AcclAvg_z & ~1);
+  //AccOffset_z= AccelFac_z + AcclAvg_z;
+  OffsetValH = AccelFac_z >> 8;
+  OffsetValL = AccelFac_z & 0x00FF;
+  
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, ZG_OFFS_USRH, OffsetValH);   
+  TM_I2C_Write(MPU6050_I2C, DataStruct->Address, ZG_OFFS_USRL, OffsetValL);
+  //3 Apply the values
+
 }
 
 TM_MPU6050_Result_t TM_MPU6050_ReadAccelerometer(TM_MPU6050_t* DataStruct) {

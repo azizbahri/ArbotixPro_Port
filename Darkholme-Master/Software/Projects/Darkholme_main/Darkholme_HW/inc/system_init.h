@@ -41,6 +41,10 @@
 #define CPU_USART_AF       GPIO_AF_UART4  //unused
 #define SPI_AF             GPIO_AF_SPI2     
 
+///////////////////IMU I2C//////////////////////////////////////////////////////////
+//the i2c pins are defined in    tm_stm32f4_mpu6050.h      #
+//SCL			PA8			Clock line for I2C
+//SDA			PC9			Data line for I2C
 ///////////////////UART GPIO//////////////////////////////////////////////////////////
 //CPU Uart
 #define PORT_CPU_TXD			        GPIOC

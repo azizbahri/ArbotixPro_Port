@@ -100,7 +100,10 @@ void ISR_1ms_TIMER(void)
 {
 	gbMiliSec++;
 }
-
+void ISR_IMU_READ(void)
+{
+       __IMU_READ_ISR();
+}
 void ISR_SPI_READ(void)
 {
 	__GYRO_ACC_READ_ISR();

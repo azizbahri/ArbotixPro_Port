@@ -46,7 +46,7 @@ void ACC_Configuration(void);
 
 //void set_GYRO_ACC_Enable(FunctionalState NewState);
 void __GYRO_ACC_READ_ISR(void);
-
+void __IMU_READ_ISR(void);
 
 #endif /* __GYRO_SPI_H */
 

@@ -28,7 +28,7 @@ void ISR_ADC(void);
 void ISR_BUZZER(void);
 void ISR_MOTOR_CONTROL(void);
 
-
+void ISR_IMU_READ(void);
 void ISR_SPI_READ(void);
 void ISR_BATTERY_CHECK(void);
 //void setLED_Enable(u8 Enable);

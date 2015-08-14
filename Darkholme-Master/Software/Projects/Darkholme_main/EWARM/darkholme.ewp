@@ -1046,6 +1046,15 @@
         <name>$PROJ_DIR$\..\Darkholme_HW\src\system_init.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\tm_stm32f4_gpio.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\tm_stm32f4_i2c.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Darkholme_HW\src\tm_stm32f4_mpu6050.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Darkholme_HW\src\usart.c</name>
       </file>
     </group>

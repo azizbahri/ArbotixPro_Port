@@ -235,7 +235,10 @@ typedef struct {
  * @brief    Library Functions
  * @{
  */
-
+/*
+    Calibrate the IMU
+*/
+ void MPU6050_Calibration(TM_MPU6050_t* DataStruct);
 /**
  * @brief  Initializes MPU6050 and I2C peripheral
  * @param  *DataStruct: Pointer to empty @ref TM_MPU6050_t structure
